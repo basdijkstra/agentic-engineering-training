@@ -27,6 +27,12 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
 .nav-link:hover { color: #e2e8f0; background: rgba(255,255,255,0.08); }
 .nav-link.active { color: #fff; background: rgba(255,255,255,0.12); }
 
+/* ── Lang toggle ── */
+.lang-toggle { display: flex; gap: 2px; margin-left: 16px; }
+.lang-btn { font-size: 11px; font-weight: 700; color: #94a3b8; background: none; border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 3px 8px; cursor: pointer; transition: all .15s; letter-spacing: 0.5px; line-height: 1; }
+.lang-btn:hover { color: #e2e8f0; border-color: rgba(255,255,255,0.12); }
+.lang-btn.active { color: #fff; background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.12); }
+
 /* ── Hero ── */
 .hero { background: linear-gradient(145deg, #112240 0%, #1e3a5f 60%, #1a5276 100%); color: #fff; padding: 56px 24px 48px; text-align: center; }
 .hero-label { font-size: 12px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: #7dd3fc; margin-bottom: 14px; }
@@ -77,20 +83,24 @@ footer a:hover { text-decoration: underline; }
       <a href="about.html" class="nav-link">About</a>
       <a href="contact.html" class="nav-link active">Contact</a>
     </div>
+    <div class="lang-toggle" aria-label="Language">
+      <button class="lang-btn active" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="no">NO</button>
+    </div>
   </div>
 </nav>
 
 <header class="hero">
   <div class="hero-label">Valuable Feedback, Fast</div>
-  <h1>Let's talk</h1>
-  <p class="hero-sub">Got questions about the assessment, interested in the training, or just want to argue about the Test Automation Quadrant? All of the above is fine.</p>
+  <h1 data-i18n="hero-h1">Let's talk</h1>
+  <p class="hero-sub" data-i18n="hero-sub">Got questions about the assessment, interested in the training, or just want to argue about the Test Automation Quadrant? All of the above is fine.</p>
 </header>
 
 <main class="main">
 
   <div class="intro">
-    <p>Bas Dijkstra has spent a good chunk of his career helping teams figure out why their test automation isn't working — and what to do about it. The answer is almost never "buy a different tool." If you're looking for someone who'll give you straight answers rather than a sales pitch, you've found the right person.</p>
-    <p>Whether you've got a specific question about the assessment, want to explore what the training might look like for your team, or just want to have a conversation about where your practice is headed — reach out. He doesn't bite, and he's genuinely interested in the problem.</p>
+    <p data-i18n="intro-p1">Bas Dijkstra has spent a good chunk of his career helping teams figure out why their test automation isn't working — and what to do about it. The answer is almost never "buy a different tool." If you're looking for someone who'll give you straight answers rather than a sales pitch, you've found the right person.</p>
+    <p data-i18n="intro-p2">Whether you've got a specific question about the assessment, want to explore what the training might look like for your team, or just want to have a conversation about where your practice is headed — reach out. He doesn't bite, and he's genuinely interested in the problem.</p>
   </div>
 
   <div class="contact-cards">
@@ -99,11 +109,11 @@ footer a:hover { text-decoration: underline; }
       <div class="ccard-accent"></div>
       <div class="ccard-body">
         <div class="ccard-text">
-          <h2>Get in touch directly</h2>
-          <p>Head over to ontestautomation.com to send a message. Best for questions about training, speaking engagements, or consulting — or if you want to tell Bas what you got wrong on the assessment and why you disagree.</p>
+          <h2 data-i18n="card1-h2">Get in touch directly</h2>
+          <p data-i18n="card1-p">Head over to ontestautomation.com to send a message. Best for questions about training, speaking engagements, or consulting — or if you want to tell Bas what you got wrong on the assessment and why you disagree.</p>
         </div>
         <a href="https://www.ontestautomation.com/contact" target="_blank" rel="noopener" class="ccard-link">
-          Contact page
+          <span data-i18n="card1-link">Contact page</span>
           <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
         </a>
       </div>
@@ -113,11 +123,11 @@ footer a:hover { text-decoration: underline; }
       <div class="ccard-accent linkedin"></div>
       <div class="ccard-body">
         <div class="ccard-text">
-          <h2>Connect on LinkedIn</h2>
-          <p>Bas is active on LinkedIn and posts regularly about test automation, testing strategy, and the occasional strong opinion about things the industry keeps getting wrong. A good place to follow along or start a conversation.</p>
+          <h2 data-i18n="card2-h2">Connect on LinkedIn</h2>
+          <p data-i18n="card2-p">Bas is active on LinkedIn and posts regularly about test automation, testing strategy, and the occasional strong opinion about things the industry keeps getting wrong. A good place to follow along or start a conversation.</p>
         </div>
         <a href="https://www.linkedin.com/in/basdijkstra" target="_blank" rel="noopener" class="ccard-link li-link">
-          LinkedIn profile
+          <span data-i18n="card2-link">LinkedIn profile</span>
           <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
         </a>
       </div>
@@ -130,6 +140,52 @@ footer a:hover { text-decoration: underline; }
 <footer>
   <p>Based on the <strong>Valuable Feedback, Fast</strong> framework by <a href="https://www.ontestautomation.com" target="_blank">Bas Dijkstra</a></p>
 </footer>
+
+<script>
+(function () {
+  var strings = {
+    en: {
+      'hero-h1':   "Let's talk",
+      'hero-sub':  "Got questions about the assessment, interested in the training, or just want to argue about the Test Automation Quadrant? All of the above is fine.",
+      'intro-p1':  "Bas Dijkstra has spent a good chunk of his career helping teams figure out why their test automation isn't working — and what to do about it. The answer is almost never \"buy a different tool.\" If you're looking for someone who'll give you straight answers rather than a sales pitch, you've found the right person.",
+      'intro-p2':  "Whether you've got a specific question about the assessment, want to explore what the training might look like for your team, or just want to have a conversation about where your practice is headed — reach out. He doesn't bite, and he's genuinely interested in the problem.",
+      'card1-h2':  "Get in touch directly",
+      'card1-p':   "Head over to ontestautomation.com to send a message. Best for questions about training, speaking engagements, or consulting — or if you want to tell Bas what you got wrong on the assessment and why you disagree.",
+      'card1-link':"Contact page",
+      'card2-h2':  "Connect on LinkedIn",
+      'card2-p':   "Bas is active on LinkedIn and posts regularly about test automation, testing strategy, and the occasional strong opinion about things the industry keeps getting wrong. A good place to follow along or start a conversation.",
+      'card2-link':"LinkedIn profile"
+    },
+    no: {
+      'hero-h1':   "La oss ta en prat",
+      'hero-sub':  "Har du spørsmål om vurderingen, er du interessert i opplæringen, eller vil du bare diskutere Test Automation Quadrant? Alt det ovennevnte er helt greit.",
+      'intro-p1':  "Bas Dijkstra har brukt store deler av karrieren sin på å hjelpe programvareteam med å finne ut hvorfor testautomatiseringen ikke leverer den verdien de ble lovet – og hva de faktisk kan gjøres med det. Svaret er nesten aldri «kjøp et annet verktøy». Leter du etter noen som gir deg ærlige svar heller enn et salgspitch, har du funnet riktig person.",
+      'intro-p2':  "Enten du har et spesifikt spørsmål om vurderingen, ønsker å utforske hva opplæringen kan se ut for teamet ditt, eller bare vil ha en samtale om hvilken retning praksisen din bør ta – ta kontakt. Han biter ikke, og er genuint interessert i problemet.",
+      'card1-h2':  "Ta kontakt direkte",
+      'card1-p':   "Gå til ontestautomation.com for å sende en melding. Best for spørsmål om opplæring, foredrag eller rådgivning – eller hvis du vil fortelle Bas hva du svarte feil på og hvorfor du er uenig.",
+      'card1-link':"Kontaktside",
+      'card2-h2':  "Koble til på LinkedIn",
+      'card2-p':   "Bas er aktiv på LinkedIn og publiserer jevnlig om testautomatisering, teststrategi og den av og til sterke meningen om ting bransjen fortsetter å gjøre feil. Et godt sted å følge med eller starte en samtale.",
+      'card2-link':"LinkedIn-profil"
+    }
+  };
+
+  function applyLang(lang) {
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n');
+      if (strings[lang][key] !== undefined) el.textContent = strings[lang][key];
+    });
+    document.querySelectorAll('.lang-btn').forEach(function (btn) {
+      btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+    });
+    document.documentElement.lang = lang === 'no' ? 'nb' : 'en';
+  }
+
+  document.querySelectorAll('.lang-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () { applyLang(btn.getAttribute('data-lang')); });
+  });
+}());
+</script>
 
 <!-- impeccable-live-start -->
 <script src="http://localhost:8400/live.js"></script>

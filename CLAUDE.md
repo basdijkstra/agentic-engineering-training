@@ -12,14 +12,26 @@ A self-contained, three-page static HTML site built around the **Valuable Feedba
 |------|---------|
 | `valuable-feedback-fast-assessment.html` | The main assessment — 36 questions across 8 dimensions, live scoring, maturity-level results |
 | `resources.html` | Links to related blog posts and training courses |
+| `about.html` | Bio and framework origin |
+| `testimonials.html` | User testimonials; managed via the `/add-testimonial` skill |
 | `contact.html` | Links to Bas's contact page and LinkedIn profile |
 
 ## Architecture
 
-All three pages share:
+All five pages share:
 - **Identical nav markup** — sticky bar with brand link + Assessment / Resources / Contact links. Active page gets `class="nav-link active"`. When adding a page, update the nav in all three files.
 - **Identical CSS custom properties** — `--navy`, `--teal`, `--text`, `--muted`, `--border`, `--bg`, `--radius`, `--shadow` defined in `:root`. Use these; don't introduce new colour values.
 - **Identical nav and footer patterns** — copy from an existing page when adding a new one.
+
+## Tests
+
+Run the test suite after every change:
+
+```bash
+node --test tests/about-page.test.js
+```
+
+All tests must pass before considering a task done. If a change affects which pages exist or what the nav contains, update the tests (or add new ones) first — then implement.
 
 ### Assessment page internals
 
