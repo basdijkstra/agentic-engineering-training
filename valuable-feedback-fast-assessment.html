@@ -141,6 +141,7 @@ footer a:hover { text-decoration: underline; }
     <div class="nav-links">
       <a href="valuable-feedback-fast-assessment.html" class="nav-link active">Assessment</a>
       <a href="resources.html" class="nav-link">Resources</a>
+      <a href="contact.html" class="nav-link">Contact</a>
     </div>
   </div>
 </nav>
@@ -148,7 +149,7 @@ footer a:hover { text-decoration: underline; }
 <header class="hero">
   <div class="hero-label">Test Automation Maturity Assessment</div>
   <h1>Valuable Feedback, Fast</h1>
-  <p class="hero-sub">Assess how well your team's test automation strategy and implementation delivers what matters most: reliable, meaningful feedback that reaches the right people quickly.</p>
+  <p class="hero-sub">Find out how well your test automation practice delivers on its only real job: getting the right information to the right people, fast. No fluff — just an honest look at where you are.</p>
   <p class="hero-attr">Based on the work of <a href="https://www.ontestautomation.com" target="_blank">Bas Dijkstra</a></p>
 </header>
 
@@ -163,13 +164,13 @@ footer a:hover { text-decoration: underline; }
 <main class="main">
 
 <div class="instructions">
-  <h2>How to use this assessment</h2>
-  <p>For each statement, rate how accurately it describes your team's current situation — not your aspirations. Work through it together as a team for the richest conversation. The assessment covers 8 dimensions of the Valuable Feedback, Fast framework across 36 statements.</p>
+  <h2>Before you dive in...</h2>
+  <p>For each statement, rate how accurately it describes your team's current reality — not what you'd like to believe, and not what you're planning to fix next sprint. Be honest. The assessment works best when you do it together as a team; you'll be surprised how much you disagree on things you thought were settled. There are 36 statements across 8 dimensions.</p>
   <div class="scale-row">
-    <div class="scale-item"><div class="sbadge s1">1</div><span>Not yet — strongly disagree</span></div>
-    <div class="scale-item"><div class="sbadge s2">2</div><span>Sometimes — partially agree</span></div>
-    <div class="scale-item"><div class="sbadge s3">3</div><span>Often — mostly agree</span></div>
-    <div class="scale-item"><div class="sbadge s4">4</div><span>Consistently — strongly agree</span></div>
+    <div class="scale-item"><div class="sbadge s1">1</div><span>Not yet — we're nowhere near this</span></div>
+    <div class="scale-item"><div class="sbadge s2">2</div><span>Sometimes — we do this, but inconsistently</span></div>
+    <div class="scale-item"><div class="sbadge s3">3</div><span>Often — this is mostly true for us</span></div>
+    <div class="scale-item"><div class="sbadge s4">4</div><span>Consistently — yes, this is genuinely us</span></div>
   </div>
 </div>
 
@@ -179,7 +180,7 @@ footer a:hover { text-decoration: underline; }
     <div class="snum">1</div>
     <div>
       <h3>Strategy &amp; Purpose</h3>
-      <p>A mature practice starts with a clear, shared understanding of why you automate and what information you need — before choosing tools or writing a single test. The real problem is rarely the tool; it is the lack of a solid, holistic strategy.</p>
+      <p>Most teams reach for a tool before they've asked what they actually need. That's backwards. The real problems in test automation are rarely technical — they're strategic. This section checks whether your team knows why you automate, not just how.</p>
     </div>
   </div>
   <div class="scard-body">
@@ -213,7 +214,7 @@ footer a:hover { text-decoration: underline; }
     <div class="snum">2</div>
     <div>
       <h3>Coverage — Testing What Matters</h3>
-      <p>Valuable tests cover behaviors that are important to the business, end users, and development team. Coverage decisions should be driven by risk and significance — what matters to someone who matters — not by what is easy to automate.</p>
+      <p>There's a temptation to automate whatever is easy to automate, then feel good about the coverage numbers. Resist it. Tests that confirm behaviors nobody cares about are expensive noise. This section checks whether your coverage is driven by risk and value — or by convenience.</p>
     </div>
   </div>
   <div class="scard-body">
@@ -247,7 +248,7 @@ footer a:hover { text-decoration: underline; }
     <div class="snum">3</div>
     <div>
       <h3>Trustworthiness</h3>
-      <p>Teams can only rely on test results that are consistently accurate. No false positives — failures caused by test infrastructure, data, or code rather than the product. No false negatives — passing tests that miss real bugs. Either erodes trust and makes the whole suite worthless.</p>
+      <p>Here's the uncomfortable truth about flaky or misleading tests: they're worse than no tests at all. A suite you don't trust is one you start ignoring — and then you're flying blind with extra steps. This section checks whether your team genuinely relies on what your tests tell you.</p>
     </div>
   </div>
   <div class="scard-body">
@@ -281,7 +282,7 @@ footer a:hover { text-decoration: underline; }
     <div class="snum">4</div>
     <div>
       <h3>Actionability</h3>
-      <p>Feedback is only valuable if people can act on it. When something fails, teams need to identify the root cause quickly. This requires small test scope, descriptive names, and informative assertion messages — not vague signals pointing nowhere.</p>
+      <p>A test failure that tells you "something went wrong somewhere" is not feedback — it's a riddle. Good tests don't just detect problems; they point you straight at them. This section checks whether your failures are useful, or just the beginning of an investigation.</p>
     </div>
   </div>
   <div class="scard-body">
@@ -311,7 +312,7 @@ footer a:hover { text-decoration: underline; }
     <div class="snum">5</div>
     <div>
       <h3>Efficiency &amp; Test Design</h3>
-      <p>Feedback must be fast as well as valuable. Choosing the right test type for each scenario, avoiding coverage duplication, and decomposing large E2E tests into faster alternatives directly determines how quickly the team can act on results.</p>
+      <p>Valuable feedback that arrives three hours after you pushed your change is only marginally better than no feedback at all. Test design choices — which level to test at, whether to decompose that sprawling E2E suite, how to handle external dependencies — determine whether "fast" in Valuable Feedback, Fast actually means anything.</p>
     </div>
   </div>
   <div class="scard-body">
@@ -345,7 +346,7 @@ footer a:hover { text-decoration: underline; }
     <div class="snum">6</div>
     <div>
       <h3>The Test Automation Quadrant</h3>
-      <p>Every test can be positioned on two axes: information value and efficiency. Maximize tests in the high-value, high-efficiency quadrant. Retain high-value, low-efficiency tests despite their cost. Deprioritize low-value tests and eliminate those that are also inefficient — regardless of how easy they are to run.</p>
+      <p>Not all tests deserve to exist. The Test Automation Quadrant puts every test on two axes — information value and efficiency — and makes the hard choices obvious. The goal isn't more tests; it's better-positioned ones. This section checks whether your team thinks that way, or whether your suite grows like a garden nobody weeds.</p>
     </div>
   </div>
   <div class="scard-body">
@@ -375,7 +376,7 @@ footer a:hover { text-decoration: underline; }
     <div class="snum">7</div>
     <div>
       <h3>Pipeline &amp; Tooling</h3>
-      <p>Test automation is most effective when embedded in the development workflow and tools are chosen deliberately. Pipeline design should amplify your testing strategy — not constrain it. Tool choices should follow strategy, not precede it.</p>
+      <p>Picking the tool first and figuring out the strategy later is like buying a car before you know where you're going. It usually gets you somewhere — just not necessarily anywhere useful. This section checks whether your tooling and pipeline serve your strategy, or whether they've quietly become the strategy.</p>
     </div>
   </div>
   <div class="scard-body">
@@ -405,7 +406,7 @@ footer a:hover { text-decoration: underline; }
     <div class="snum">8</div>
     <div>
       <h3>Team &amp; Skills</h3>
-      <p>Sustainable test automation requires the right skills distributed across the team, genuine shared ownership, and continuous investment in people. Centralizing automation knowledge in one person or role is one of the most common failure patterns.</p>
+      <p>If your test automation lives in one person's head — or one person's pull requests — you don't have a practice, you have a dependency. The moment that person goes on holiday, everything gets awkward. This section checks whether automation is genuinely shared across the team, or quietly owned by one very tired individual.</p>
     </div>
   </div>
   <div class="scard-body">
@@ -434,17 +435,17 @@ footer a:hover { text-decoration: underline; }
 <!-- ═══════════════════════════════════════════════════ RESULTS -->
 <div class="results" id="results">
   <div class="results-hero">
-    <h2>Your Assessment Results</h2>
+    <h2>Here's where you stand</h2>
     <div class="big-score" id="r-score">—</div>
-    <div class="score-sub">overall maturity score (out of 144)</div>
+    <div class="score-sub">out of a possible 144</div>
     <div class="mbadge" id="r-badge">—</div>
   </div>
   <div class="results-body">
     <p class="results-desc" id="r-desc"></p>
-    <h3 style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:12px;">Score by dimension</h3>
+    <h3 style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:12px;">How you scored across the eight dimensions</h3>
     <div class="breakdown-grid" id="r-breakdown"></div>
     <div class="next-steps">
-      <h3>Recommended next steps</h3>
+      <h3>Where to go from here</h3>
       <div class="steps" id="r-steps"></div>
       <div id="r-focus"></div>
     </div>
@@ -537,36 +538,36 @@ document.querySelectorAll('.qrow').forEach(row => {
 });
 
 const DESCS = {
-  early:      'Your team is at the beginning of the test automation journey. A clear, shared strategy is likely missing, and tests that exist may not be consistently trustworthy or well-targeted. This is the most important moment to get right: patterns established now will shape your practice for years. Focus on foundations — strategy, risk discussions, and trustworthiness — before scaling the number of tests.',
-  developing: 'Your team has made a start and some good practices are emerging. Gaps remain — perhaps in the reliability of your tests, the alignment of coverage with risk, or in how well automation is embedded in your development workflow. Targeted improvements in your lowest-scoring dimensions will have the most impact right now.',
-  practicing: 'Your test automation practice is solid and delivering real value. Tests are mostly trustworthy, coverage reflects what matters, and the team shares ownership. The opportunity is to optimize — applying the Test Automation Quadrant more rigorously, decomposing heavy tests, and continuously improving efficiency without losing the information value you already deliver.',
-  optimizing: 'Your team has a mature, high-quality test automation practice. Tests are trustworthy, well-targeted, efficient, and embedded in the development workflow. The challenge at this level is sustaining excellence as the product, team, and context evolve. Focus on your lowest-scoring dimensions for the next incremental improvement, and consider how you can share your experience with others.',
+  early:      "You're at the start of the journey — and that's actually a good place to be, because the habits you build now will stick. The honest challenge is that writing more tests at this stage is probably not the answer. What you need first is a clear sense of why you're automating, what information you're after, and how you'll know when a test is worth keeping. Get the foundations right before you scale anything.",
+  developing: "You've made a start, and some things are genuinely working. But there are gaps — probably in trustworthiness, coverage strategy, or how deeply automation is embedded in how your team actually works day to day. The good news is that targeted improvements in the right places will have a disproportionate impact from here. Scroll down for where to look first.",
+  practicing: "Things are working well — your tests are mostly trustworthy, your coverage is driven by what matters, and the team actually uses the results. The opportunity now is to sharpen the edges. Apply the Test Automation Quadrant more deliberately, look hard at your slower tests, and ask whether you're squeezing all the efficiency you can out of the value you're already delivering.",
+  optimizing: "This is genuinely impressive. Your tests are trustworthy, well-targeted, efficient, and woven into how your team works. The challenge at this level isn't dramatic — it's sustaining what you've built as the product grows, the team changes, and the context shifts. Check your lowest-scoring dimensions for where to focus next, and consider sharing what's working with the wider community. Others could learn a lot from you.",
 };
 
 const STEPS = {
   early: [
-    { n:1, title:'Start with strategy, not tools', body:'Before writing more tests, define what information you need, who needs it, and how quickly. A clear purpose prevents wasted effort and builds alignment across the team.' },
-    { n:2, title:'Address flaky tests immediately', body:'Unreliable tests are worse than no tests — teams that ignore flakiness eventually stop trusting results entirely. Fix or delete every test that fails intermittently for reasons other than product defects.' },
-    { n:3, title:'Conduct a risk-based coverage discussion', body:'Bring together developers, testers, and product people to identify the highest-risk behaviors in your product. Start automating there — not with what is easy or what you already know how to test.' },
-    { n:4, title:'Make automation a team skill, not a specialism', body:'Avoid centralizing automation knowledge in one person. Start pair-programming on tests, run ensemble sessions, and share code ownership across the team from day one.' },
+    { n:1, title:'Start with strategy, not tools', body:"Before writing another line of test code, define what information you actually need — and who needs it, and how soon. That conversation, uncomfortable as it sometimes is, is worth more than any test you could write right now." },
+    { n:2, title:'Tackle flakiness head-on', body:"Flaky tests are a slow poison. Teams start ignoring them, then start ignoring all tests, then wonder why nobody trusts the results anymore. Fix or delete every test that passes and fails for no obvious reason." },
+    { n:3, title:'Have a risk conversation', body:"Get your developers, testers, and product people in a room and ask: what could go wrong in this product, and how bad would that be? Start your automation coverage there — not with the happy path you already know works." },
+    { n:4, title:'Make automation everyone\'s job', body:"If one person writes all the tests, one person understands all the tests, and everyone else is a bystander. Pair on tests, run ensemble sessions, treat automation as part of the team's shared craft." },
   ],
   developing: [
-    { n:1, title:'Eliminate low-value tests', body:'Review your suite against the Test Automation Quadrant: classify tests by information value and efficiency. Remove tests in the low-value, low-efficiency quadrant without hesitation — they cost more than they contribute.' },
-    { n:2, title:'Decompose your heaviest E2E tests', body:'Identify your slowest or most brittle end-to-end tests. Explore whether parts of them can be replaced with API tests, consumer-driven contract tests, or component tests — preserving the information value while gaining speed.' },
-    { n:3, title:'Tighten pipeline integration', body:'If test feedback takes hours, it will be ignored. Ensure tests run automatically on every relevant change. Parallelise and stage your runs to get actionable results in minutes, not hours.' },
-    { n:4, title:'Make results meaningful to stakeholders', body:'If product owners or business stakeholders never read your test reports, the information is not reaching who matters. Improve naming, reporting format, and how you communicate test outcomes.' },
+    { n:1, title:'Cut your low-value tests', body:"Get the Test Automation Quadrant model out and start classifying. Tests in the bottom-left — low value, low efficiency — should be deleted. Yes, deleted. They cost more to maintain than they're worth." },
+    { n:2, title:'Break up your E2E tests', body:"Find your slowest, most brittle end-to-end tests and ask: do they actually need to be end-to-end? Often you can replace them with a faster API test or a contract test and lose nothing of value — while gaining a lot of speed." },
+    { n:3, title:'Make feedback faster', body:"If your tests take hours to run, people route around them. Get tests running on every relevant change and aim for results in minutes. Parallelise, stage, prioritise — whatever it takes." },
+    { n:4, title:'Make results readable by humans', body:"If your product owner has never voluntarily opened a test report, something is wrong with the report. Better test names, clearer output, and a summary that means something to non-engineers go a long way." },
   ],
   practicing: [
-    { n:1, title:'Apply the Test Automation Quadrant systematically', body:'Regularly review every test against value and efficiency. For tests in the high-value, low-efficiency quadrant: can the same information be obtained with a simpler, faster test? If so, make the change.' },
-    { n:2, title:'Design for testability upstream', body:'Testability must be built in, not added afterwards. Involve automation thinking at the design and architecture stage — make testability and automatability first-class engineering concerns.' },
-    { n:3, title:'Invest in test infrastructure', body:'At this maturity level, infrastructure is often the bottleneck. Invest in better tooling, environment management, and pipeline optimizations to sustain fast feedback as the product and team scale.' },
-    { n:4, title:'Build a concrete skills development plan', body:'Identify the specific capabilities limiting your next improvement — test design, contract testing, observability, or automation strategy. Build a targeted learning plan rather than generic training.' },
+    { n:1, title:'Apply the Quadrant rigorously', body:"Stop thinking about test types and start thinking about value and efficiency. For every slow, expensive test: can you get the same information faster and cheaper? Often the answer is yes, and the investment pays back quickly." },
+    { n:2, title:'Build testability in upstream', body:"The best time to think about testability is at the design stage, not after the code is written. If your tests are fighting the system under test, the system needs to change — not just the tests." },
+    { n:3, title:'Fix the infrastructure, not just the tests', body:"At this maturity level, slow feedback is often an infrastructure problem more than a test design problem. Better environments, smarter pipelines, and parallel execution can unlock the next level of speed." },
+    { n:4, title:'Get specific about skills gaps', body:"Vague training plans produce vague results. Identify exactly what's limiting your next improvement — contract testing? Test design principles? Observability? — and address that specifically." },
   ],
   optimizing: [
-    { n:1, title:'Sustain excellence through change', body:'At this level, the risk is drift. As the team grows and the product evolves, the practices that got you here need active maintenance. Review your strategy at least quarterly against current product risks and team context.' },
-    { n:2, title:'Expand the quadrant model beyond functional tests', body:'Apply the same value-and-efficiency thinking to performance testing, security testing, and observability. Each domain benefits from explicit decisions about what information to chase and at what cost.' },
-    { n:3, title:'Contribute to the broader community', body:'Your experience is rare and valuable. Consider sharing it — through open source contributions, writing, speaking at meetups, or mentoring teams earlier in the journey. Teaching also deepens your own understanding.' },
-    { n:4, title:'Continue monitoring your weakest dimensions', body:'Even at this level, some dimensions will score lower than others. Use the section breakdown above to guide your next quarter of improvement work.' },
+    { n:1, title:'Protect what you\'ve built', body:"Excellence drifts. As the team grows and the product evolves, the practices that got you here need active tending. Review your strategy at least every quarter to make sure it still fits your current reality." },
+    { n:2, title:'Expand your thinking beyond functional tests', body:"The same value-and-efficiency lens works just as well for performance testing, security testing, and observability. If those areas are less mature than your functional automation, there's work to do." },
+    { n:3, title:'Share what you know', body:"You've figured out things that a lot of teams haven't. Write about it, speak about it, mentor someone who's earlier in the journey. Teaching forces you to understand your own practice better — and the community genuinely benefits." },
+    { n:4, title:'Keep an eye on your weakest areas', body:"Even mature practices have softer spots. The breakdown above shows where yours are. Use it to guide your next round of improvement rather than resting on your overall score." },
   ],
 };
 
@@ -612,8 +613,8 @@ function showResults() {
   const focusEl = document.getElementById('r-focus');
   if (ranked.length > 0) {
     const names = ranked.map(s => '<strong>'+s.name+'</strong>').join(' and ');
-    focusEl.innerHTML = '<div class="focus-note"><strong>Your lowest-scoring dimensions:</strong> '
-      + names + '. Improvements here will have the greatest impact on your overall maturity.</div>';
+    focusEl.innerHTML = '<div class="focus-note"><strong>Where to focus first:</strong> Your lowest-scoring dimensions are '
+      + names + '. That\'s where the biggest gains are hiding.</div>';
   }
 
   const el = document.getElementById('results');
