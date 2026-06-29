@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resources — Valuable Feedback, Fast</title>
+<style>
+:root {
+  --navy: #1e3a5f;
+  --teal: #0096c7;
+  --text: #2d3748;
+  --muted: #718096;
+  --border: #e2e8f0;
+  --bg: #f7fafc;
+  --radius: 12px;
+  --shadow: 0 4px 20px rgba(0,0,0,0.07);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+
+/* ── Nav ── */
+.site-nav { position: sticky; top: 0; z-index: 200; background: #0a1628; border-bottom: 1px solid rgba(255,255,255,0.08); padding: 0 24px; }
+.nav-inner { max-width: 860px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 48px; }
+.nav-brand { font-size: 14px; font-weight: 700; color: #e2e8f0; text-decoration: none; }
+.nav-links { display: flex; gap: 4px; }
+.nav-link { font-size: 13px; font-weight: 600; color: #94a3b8; text-decoration: none; padding: 6px 12px; border-radius: 6px; transition: all .15s; }
+.nav-link:hover { color: #e2e8f0; background: rgba(255,255,255,0.08); }
+.nav-link.active { color: #fff; background: rgba(255,255,255,0.12); }
+
+/* ── Hero ── */
+.hero { background: linear-gradient(145deg, #112240 0%, #1e3a5f 60%, #1a5276 100%); color: #fff; padding: 56px 24px 48px; text-align: center; }
+.hero-label { font-size: 12px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: #7dd3fc; margin-bottom: 14px; }
+.hero h1 { font-size: clamp(26px, 4vw, 42px); font-weight: 800; line-height: 1.2; margin-bottom: 12px; }
+.hero-sub { font-size: 17px; color: #bfdbfe; max-width: 540px; margin: 0 auto; }
+
+/* ── Layout ── */
+.main { max-width: 860px; margin: 48px auto; padding: 0 20px; }
+
+/* ── Section heading ── */
+.section-title { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
+
+/* ── Resource cards ── */
+.resources { display: flex; flex-direction: column; gap: 20px; margin-bottom: 56px; }
+.rcard { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; display: grid; grid-template-columns: 4px 1fr; }
+.rcard-accent { background: var(--teal); }
+.rcard-accent.blog { background: #7c3aed; }
+.rcard-accent.course { background: var(--teal); }
+.rcard-body { padding: 24px 26px; }
+.rcard-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.rcard-type { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 3px 9px; border-radius: 999px; }
+.type-blog { background: #ede9fe; color: #5b21b6; }
+.type-course { background: #e0f2fe; color: #0369a1; }
+.rcard h2 { font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 8px; line-height: 1.3; }
+.rcard p { font-size: 14.5px; color: var(--muted); line-height: 1.65; margin-bottom: 18px; }
+.rcard-link { display: inline-flex; align-items: center; gap: 6px; font-size: 13.5px; font-weight: 700; color: var(--teal); text-decoration: none; padding: 8px 16px; border: 2px solid var(--teal); border-radius: 8px; transition: all .15s; }
+.rcard-link:hover { background: var(--teal); color: #fff; }
+.rcard-link.blog-link { color: #7c3aed; border-color: #7c3aed; }
+.rcard-link.blog-link:hover { background: #7c3aed; color: #fff; }
+.rcard-link svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+/* ── CTA banner ── */
+.cta-banner { background: linear-gradient(135deg, #112240, #1e3a5f); border-radius: var(--radius); padding: 36px 32px; text-align: center; color: #fff; margin-bottom: 56px; }
+.cta-banner h2 { font-size: 20px; font-weight: 800; margin-bottom: 10px; }
+.cta-banner p { font-size: 15px; color: #bfdbfe; margin-bottom: 20px; max-width: 480px; margin-left: auto; margin-right: auto; }
+.cta-btn { display: inline-block; padding: 12px 28px; background: var(--teal); color: #fff; font-size: 14px; font-weight: 700; border-radius: 8px; text-decoration: none; transition: background .15s; }
+.cta-btn:hover { background: #0369a1; }
+
+/* ── Footer ── */
+footer { text-align: center; padding: 32px 20px; font-size: 13.5px; color: var(--muted); border-top: 1px solid var(--border); }
+footer a { color: var(--teal); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="valuable-feedback-fast-assessment.html" class="nav-brand">Valuable Feedback, Fast</a>
+    <div class="nav-links">
+      <a href="valuable-feedback-fast-assessment.html" class="nav-link">Assessment</a>
+      <a href="resources.html" class="nav-link active">Resources</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-label">Valuable Feedback, Fast</div>
+  <h1>Resources</h1>
+  <p class="hero-sub">Further reading and training to help your team build a mature, effective test automation practice.</p>
+</header>
+
+<main class="main">
+
+  <p class="section-title">Articles &amp; Courses</p>
+  <div class="resources">
+
+    <!-- Blog post -->
+    <div class="rcard">
+      <div class="rcard-accent blog"></div>
+      <div class="rcard-body">
+        <div class="rcard-meta">
+          <span class="rcard-type type-blog">Blog post</span>
+        </div>
+        <h2>The Test Automation Quadrant</h2>
+        <p>A two-dimensional model for evaluating automated tests by information value and efficiency. Learn how to classify every test in your suite, understand which to prioritize, which to retain despite their cost, which to deprioritize, and which to eliminate entirely — regardless of how easy they are to run.</p>
+        <a href="https://www.ontestautomation.com/the-test-automation-quadrant/" target="_blank" rel="noopener" class="rcard-link blog-link">
+          Read the article
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Course 1 -->
+    <div class="rcard">
+      <div class="rcard-accent course"></div>
+      <div class="rcard-body">
+        <div class="rcard-meta">
+          <span class="rcard-type type-course">Course</span>
+        </div>
+        <h2>Valuable Feedback, Fast (for engineers)</h2>
+        <p>A three-day hands-on course covering test automation strategy from the ground up. Topics include the 5W1H framework for problem identification, the Test Automation Quadrant, E2E test decomposition, external dependency management, build pipeline design, tool selection, and building a concrete action plan. Available in Java, C#, and TypeScript. Ideal for development and testing practitioners who want to move beyond tool training and build a holistic strategy.</p>
+        <a href="https://www.ontestautomation.com/training/valuable-feedback-fast/" target="_blank" rel="noopener" class="rcard-link">
+          View the course
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Course 2 -->
+    <div class="rcard">
+      <div class="rcard-accent course"></div>
+      <div class="rcard-body">
+        <div class="rcard-meta">
+          <span class="rcard-type type-course">Course</span>
+        </div>
+        <h2>Valuable Feedback, Fast — Applied (for teams)</h2>
+        <p>A two-day in-person workshop tailored to your team's specific context rather than a generic curriculum. Covers feedback loop mapping, the Test Automation Quadrant, E2E test decomposition and testability, pipeline design, team skills and communities of practice, tool selection, and responsible AI in testing. Participants leave with a shared understanding and a concrete, actionable improvement plan. Best suited for teams of 6–25 who want to work on their own challenges together.</p>
+        <a href="https://www.ontestautomation.com/training/valuable-feedback-fast-applied/" target="_blank" rel="noopener" class="rcard-link">
+          View the course
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="cta-banner">
+    <h2>Ready to assess your team?</h2>
+    <p>Use the maturity assessment to identify where your practice stands today and where to focus next.</p>
+    <a href="valuable-feedback-fast-assessment.html" class="cta-btn">Take the assessment</a>
+  </div>
+
+</main>
+
+<footer>
+  <p>Based on the <strong>Valuable Feedback, Fast</strong> framework by <a href="https://www.ontestautomation.com" target="_blank">Bas Dijkstra</a></p>
+</footer>
+
+</body>
+</html>
