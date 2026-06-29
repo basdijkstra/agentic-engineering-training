@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valuable Feedback, Fast — Test Automation Maturity Assessment</title>
+<style>
+:root {
+  --navy: #1e3a5f;
+  --teal: #0096c7;
+  --text: #2d3748;
+  --muted: #718096;
+  --border: #e2e8f0;
+  --bg: #f7fafc;
+  --radius: 12px;
+  --shadow: 0 4px 20px rgba(0,0,0,0.07);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+
+/* ── Header ── */
+.hero { background: linear-gradient(145deg, #112240 0%, #1e3a5f 60%, #1a5276 100%); color: #fff; padding: 64px 24px 52px; text-align: center; }
+.hero-label { font-size: 12px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: #7dd3fc; margin-bottom: 14px; }
+.hero h1 { font-size: clamp(28px, 5vw, 52px); font-weight: 800; line-height: 1.15; margin-bottom: 14px; }
+.hero-sub { font-size: 18px; color: #bfdbfe; max-width: 580px; margin: 0 auto 20px; }
+.hero-attr { font-size: 13px; color: #7dd3fc; }
+.hero-attr a { color: #7dd3fc; }
+
+/* ── Sticky progress ── */
+.sticky-bar { position: sticky; top: 0; z-index: 100; background: #0f1f3a; border-bottom: 1px solid rgba(255,255,255,0.08); padding: 10px 24px; }
+.sticky-inner { max-width: 860px; margin: 0 auto; display: flex; align-items: center; gap: 14px; }
+.sticky-label { font-size: 12px; color: #94a3b8; white-space: nowrap; }
+.track { flex: 1; height: 7px; background: rgba(255,255,255,0.12); border-radius: 4px; overflow: hidden; }
+.track-fill { height: 100%; background: linear-gradient(90deg, var(--teal), #38bdf8); border-radius: 4px; width: 0; transition: width .3s; }
+.sticky-score { font-size: 12px; font-weight: 700; color: #e2e8f0; white-space: nowrap; }
+
+/* ── Layout ── */
+.main { max-width: 860px; margin: 40px auto; padding: 0 20px; }
+
+/* ── Instructions ── */
+.instructions { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 28px 30px; margin-bottom: 36px; box-shadow: var(--shadow); }
+.instructions h2 { font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+.instructions p { color: var(--muted); font-size: 15px; margin-bottom: 10px; }
+.scale-row { display: flex; flex-wrap: wrap; gap: 10px 24px; margin-top: 18px; }
+.scale-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--muted); }
+.sbadge { width: 28px; height: 28px; border-radius: 7px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 13px; flex-shrink: 0; }
+.sbadge.s1 { background: #fee2e2; color: #991b1b; }
+.sbadge.s2 { background: #fef3c7; color: #92400e; }
+.sbadge.s3 { background: #dcfce7; color: #14532d; }
+.sbadge.s4 { background: #dbeafe; color: #1e3a8a; }
+
+/* ── Section cards ── */
+.scard { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 26px; box-shadow: var(--shadow); overflow: hidden; }
+.scard-head { display: flex; align-items: flex-start; gap: 14px; padding: 22px 26px; border-left: 5px solid var(--teal); }
+.snum { width: 36px; height: 36px; border-radius: 50%; background: var(--teal); color: #fff; font-weight: 800; font-size: 15px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+.scard-head h3 { font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+.scard-head p { font-size: 13.5px; color: var(--muted); line-height: 1.5; }
+.scard-body { padding: 0 26px 4px; border-top: 1px solid var(--border); }
+
+/* ── Question rows ── */
+.qrow { display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: center; padding: 18px 0; border-bottom: 1px solid var(--border); }
+.qrow:last-of-type { border-bottom: none; }
+.qtext { font-size: 14.5px; line-height: 1.55; }
+.rbts { display: flex; gap: 6px; flex-shrink: 0; }
+.rbt { width: 40px; height: 40px; border-radius: 8px; border: 2px solid var(--border); background: #fff; color: var(--muted); font-size: 14px; font-weight: 700; cursor: pointer; transition: all .15s; display: flex; align-items: center; justify-content: center; }
+.rbt:hover { border-color: var(--teal); color: var(--teal); background: #f0f9ff; }
+.rbt.sel1 { background: #fee2e2; border-color: #ef4444; color: #991b1b; }
+.rbt.sel2 { background: #fef3c7; border-color: #f59e0b; color: #92400e; }
+.rbt.sel3 { background: #dcfce7; border-color: #22c55e; color: #14532d; }
+.rbt.sel4 { background: #dbeafe; border-color: #3b82f6; color: #1e3a8a; }
+
+/* ── Section score footer ── */
+.sscore { display: flex; align-items: center; gap: 10px; padding: 11px 26px; background: #f8fafc; border-top: 1px solid var(--border); }
+.sscore-lbl { font-size: 11px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: var(--muted); }
+.sscore-track { flex: 1; height: 5px; background: var(--border); border-radius: 3px; overflow: hidden; }
+.sscore-fill { height: 100%; background: var(--teal); border-radius: 3px; width: 0; transition: width .3s; }
+.sscore-pct { font-size: 12px; font-weight: 700; color: var(--navy); min-width: 32px; text-align: right; }
+
+/* ── CTA ── */
+.cta-btn { display: block; width: 100%; padding: 18px; background: linear-gradient(135deg, #0096c7, #0369a1); color: #fff; border: none; border-radius: var(--radius); font-size: 17px; font-weight: 700; cursor: pointer; margin: 28px 0; transition: all .2s; }
+.cta-btn:hover:not(:disabled) { background: linear-gradient(135deg, #0369a1, #1e3a5f); transform: translateY(-1px); }
+.cta-btn:disabled { background: var(--border); color: var(--muted); cursor: not-allowed; transform: none; }
+
+/* ── Results ── */
+.results { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; margin-bottom: 56px; display: none; }
+.results-hero { background: linear-gradient(145deg, #112240, #1e3a5f); color: #fff; padding: 40px 32px; text-align: center; }
+.results-hero h2 { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
+.big-score { font-size: 72px; font-weight: 800; line-height: 1; margin: 14px 0 6px; }
+.score-sub { font-size: 13px; color: #bfdbfe; margin-bottom: 16px; }
+.mbadge { display: inline-block; padding: 7px 22px; border-radius: 999px; font-size: 17px; font-weight: 800; margin-top: 6px; }
+.m-early { background: #fee2e2; color: #991b1b; }
+.m-developing { background: #fef3c7; color: #92400e; }
+.m-practicing { background: #dcfce7; color: #14532d; }
+.m-optimizing { background: #dbeafe; color: #1e3a8a; }
+.results-body { padding: 32px; }
+.results-desc { font-size: 15px; line-height: 1.75; color: var(--text); margin-bottom: 28px; }
+.breakdown-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 14px; margin-bottom: 32px; }
+.bc { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; }
+.bc-name { font-size: 12px; font-weight: 700; color: var(--navy); margin-bottom: 8px; line-height: 1.4; }
+.bc-track { height: 5px; background: var(--border); border-radius: 3px; overflow: hidden; margin-bottom: 5px; }
+.bc-fill { height: 100%; border-radius: 3px; }
+.c-early { background: #ef4444; }
+.c-developing { background: #f59e0b; }
+.c-practicing { background: #22c55e; }
+.c-optimizing { background: #3b82f6; }
+.bc-pct { font-size: 12px; font-weight: 700; color: var(--muted); }
+.next-steps h3 { font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 16px; border-top: 1px solid var(--border); padding-top: 24px; }
+.steps { display: flex; flex-direction: column; gap: 12px; }
+.step { display: grid; grid-template-columns: 32px 1fr; gap: 14px; padding: 16px; background: #f8fafc; border-radius: 8px; border-left: 4px solid var(--teal); align-items: start; }
+.step-n { width: 28px; height: 28px; border-radius: 50%; background: var(--teal); color: #fff; font-weight: 800; font-size: 13px; display: flex; align-items: center; justify-content: center; margin-top: 1px; flex-shrink: 0; }
+.step h4 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+.step p { font-size: 13.5px; color: var(--muted); line-height: 1.55; }
+.focus-note { margin-top: 16px; padding: 14px 16px; background: #f0f9ff; border-radius: 8px; border-left: 4px solid var(--teal); font-size: 13.5px; color: #1e3a5f; line-height: 1.6; }
+
+/* ── Footer ── */
+footer { text-align: center; padding: 32px 20px; font-size: 13.5px; color: var(--muted); border-top: 1px solid var(--border); }
+footer a { color: var(--teal); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+
+@media (max-width: 580px) {
+  .qrow { grid-template-columns: 1fr; }
+  .rbts { justify-content: flex-start; }
+  .scale-row { flex-direction: column; gap: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-label">Test Automation Maturity Assessment</div>
+  <h1>Valuable Feedback, Fast</h1>
+  <p class="hero-sub">Assess how well your team's test automation strategy and implementation delivers what matters most: reliable, meaningful feedback that reaches the right people quickly.</p>
+  <p class="hero-attr">Based on the work of <a href="https://www.ontestautomation.com" target="_blank">Bas Dijkstra</a></p>
+</header>
+
+<div class="sticky-bar">
+  <div class="sticky-inner">
+    <span class="sticky-label" id="prog-label">0 of 36 answered</span>
+    <div class="track"><div class="track-fill" id="prog-fill"></div></div>
+    <span class="sticky-score" id="prog-score">0 / 144</span>
+  </div>
+</div>
+
+<main class="main">
+
+<div class="instructions">
+  <h2>How to use this assessment</h2>
+  <p>For each statement, rate how accurately it describes your team's current situation — not your aspirations. Work through it together as a team for the richest conversation. The assessment covers 8 dimensions of the Valuable Feedback, Fast framework across 36 statements.</p>
+  <div class="scale-row">
+    <div class="scale-item"><div class="sbadge s1">1</div><span>Not yet — strongly disagree</span></div>
+    <div class="scale-item"><div class="sbadge s2">2</div><span>Sometimes — partially agree</span></div>
+    <div class="scale-item"><div class="sbadge s3">3</div><span>Often — mostly agree</span></div>
+    <div class="scale-item"><div class="sbadge s4">4</div><span>Consistently — strongly agree</span></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ SECTION 1 -->
+<div class="scard" data-sec="1" data-max="20">
+  <div class="scard-head">
+    <div class="snum">1</div>
+    <div>
+      <h3>Strategy &amp; Purpose</h3>
+      <p>A mature practice starts with a clear, shared understanding of why you automate and what information you need — before choosing tools or writing a single test. The real problem is rarely the tool; it is the lack of a solid, holistic strategy.</p>
+    </div>
+  </div>
+  <div class="scard-body">
+    <div class="qrow" data-qid="1_1">
+      <div class="qtext">We have a clear test automation strategy that guides what we automate, why, and how — and it is understood across the whole team.</div>
+      <div class="rbts"><button class="rbt" data-v="1">1</button><button class="rbt" data-v="2">2</button><button class="rbt" data-v="3">3</button><button class="rbt" data-v="4">4</button></div>
+    </div>
+    <div class="qrow" data-qid="1_2">
+      <div class="qtext">Our automation goals are expressed in terms of the information value we need, not primarily in terms of tools, frameworks, or coverage metrics.</div>
+      <div class="rbts"><button class="rbt" data-v="1">1</button><button class="rbt" data-v="2">2</button><button class="rbt" data-v="3">3</button><button class="rbt" data-v="4">4</button></div>
+    </div>
+    <div class="qrow" data-qid="1_3">
+      <div class="qtext">We regularly revisit and update our strategy as our product, team, and context change over time.</div>
+      <div class="rbts"><button class="rbt" data-v="1">1</button><button class="rbt" data-v="2">2</button><button class="rbt" data-v="3">3</button><button class="rbt" data-v="4">4</button></div>
+    </div>
+    <div class="qrow" data-qid="1_4">
+      <div class="qtext">We conduct explicit, risk-based discussions to decide what to automate — and equally importantly, what not to automate.</div>
+      <div class="rbts"><button class="rbt" data-v="1">1</button><button class="rbt" data-v="2">2</button><button class="rbt" data-v="3">3</button><button class="rbt" data-v="4">4</button></div>
+    </div>
+    <div class="qrow" data-qid="1_5">
+      <div class="qtext">Our team understands the distinction between automated testing and using automation tools to support the testing process — and why that distinction matters.</div>
+      <div class="rbts"><button class="rbt" data-v="1">1</button><button class="rbt" data-v="2">2</button><button class="rbt" data-v="3">3</button><button class="rbt" data-v="4">4</button></div>
+    </div>
+  </div>
+  <div class="sscore"><span class="sscore-lbl">Section score</span><div class="sscore-track"><div class="sscore-fill" id="sf-1"></div></div><span class="sscore-pct" id="sp-1">—</span></div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ SECTION 2 -->
+<div class="scard" data-sec="2" data-max="20">
+  <div class="scard-head">
+    <div class="snum">2</div>
+    <div>
+      <h3>Coverage — Testing What Matters</h3>
+      <p>Valuable tests cover behaviors that are important to the business, end users, and development team. Coverage decisions should be driven by risk and significance — what matters to someone who matters — not by what is easy to automate.</p>
+    </div>
+  </div>
+  <div class="scard-body">
+    <div class="qrow" data-qid="2_1">
+      <div class="qtext">Our automated tests focus on behaviors that matter most to the business and end users — not just what is technically convenient to automate.</div>
+      <div class="rbts"><button class="rbt" data-v="1">1</button><button class="rbt" data-v="2">2</button><button class="rbt" data-v="3">3</button><button class="rbt" data-v="4">4</button></div>
+    </div>
+    <div class="qrow" data-qid="2_2">
+      <div class="qtext">We prioritize coverage based on risk, not based on what will look best in a coverage report or what is easiest to write.</div>
+      <div class="rbts"><button class="rbt" data-v="1">1</button><button class="rbt" data-v="2">2</button><button class="rbt" data-v="3">3</button><button class="rbt" data-v="4">4</button></div>
+    </div>
+    <div class="qrow" data-qid="2_3">
+      <div class="qtext">We regularly review and update our test coverage as the product and its risk profile evolve.</div>
+      <div class="rbts"><button class="rbt" data-v="1">1</button><button class="rbt" data-v="2">2</button><button class="rbt" data-v="3">3</button><button class="rbt" data-v="4">4</button></div>
+    </div>
+    <div class="qrow" data-qid="2_4">
+      <div class="qtext">We make conscious, explicit decisions about what not to automate, and those decisions are understood and accepted across the team.</div>
+      <div class="rbts"><button class="rbt" data-v="1">1</button><button class="rbt" data-v="2">2</button><button class="rbt" data-v="3">3</button><button class="rbt" data-v="4">4</button></div>
+    </div>
+    <div class="qrow" data-qid="2_5">
+      <div class="qtext">Key stakeholders — product owners, business analysts, end users — recognize and value the information our automated tests provide.</div>
+      <div class="rbts"><button class="rbt" data-v="1">1</button><button class="rbt" data-v="2">2</button><button class="rbt" data-v="3">3</button><button class="rbt" data-v="4">4</button></div>
+    </div>
+  </div>
+  <div class="sscore"><span class="sscore-lbl">Section score</span><div class="sscore-track"><div class="sscore-fill" id="sf-2"></div></div><span class="sscore-pct" id="sp-2">—</span></div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ SECTION 3 -->
+<div class="scard" data-sec="3" data-max="20">
+  <div class="scard-head">
+    <div class="snum">3</div>
+    <div>
+      <h3>Trustworthiness</h3>
+      <p>Teams can only rely on test results that are consistently accurate. No false positives — failures caused by test infrastructure, data, or code rather than the product. No false negatives — passing tests that miss real bugs. Either erodes trust and makes the whole suite worthless.</p>
+    </div>
+  </div>
+  <div class="scard-body">
+    <div class="qrow" data-qid="3_1">
+      <div class="qtext">Our automated tests rarely fail due to reasons unrelated to actual product defects — such as test data issues, environment instability, or bugs in the test code itself.</div>
+      <div class="rbts"><button class="rbt" data-v="1">1</button><button class="rbt" data-v="2">2</button><button class="rbt" data-v="3">3</button><button class="rbt" data-v="4">4</button></div>
+    </div>
+    <div class="qrow" data-qid="3_2">
+      <div class="qtext">When all tests pass, we are confident the tested behaviors are actually working — we do not worry that tests are passing despite real bugs being present.</div>
+      <div class="rbts"><button class="rbt" data-v="1">1</button><button class="rbt" data-v="2">2</button><button class="rbt" data-v="3">3</button><button class="rbt" data-v="4">4</button></div>
+    </div>
+    <div class="qrow" data-qid="3_3">
+      <div class="qtext">Flaky tests — those that pass and fail intermittently without code changes — are treated as a serious problem and are fixed or removed promptly.</div>
+      <div class="rbts"><button class="rbt" data-v="1">1</button><button class="rbt" data-v="2">2</button><button class="rbt" data-v="3">3</button><button class="rbt" data-v="4">4</button></div>
+    </div>
+    <div class="qrow" data-qid="3_4">
+      <div class="qtext">Test data, environments, and infrastructure are stable and consistent enough that environment problems do not cause test failures.</div>
+      <div class="rbts"><button class="rbt" data-v="1">1</button><button class="rbt" data-v="2">2</button><button class="rbt" data-v="3">3</button><button class="rbt" data-v="4">4</button></div>
+    </div>
+    <div class="qrow" data-qid="3_5">
+      <div class="qtext">We trust our test results enough to base important decisions — release readiness, rollback, escalation — on them.</div>
+      <div class="rbts"><button class="rbt" data-v="1">1</button><button class="rbt" data-v="2">2</button><button class="rbt" data-v="3">3</button><button class="rbt" data-v="4">4</button></div>
+    </div>
+  </div>
+  <div class="sscore"><span class="sscore-lbl">Section score</span><div class="sscore-track"><div class="sscore-fill" id="sf-3"></div></div><span class="sscore-pct" id="sp-3">—</span></div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ SECTION 4 -->
+<div class="scard" data-sec="4" data-max="16">
+  <div class="scard-head">
+    <div class="snum">4</div>
+    <div>
+      <h3>Actionability</h3>
+      <p>Feedback is only valuable if people can act on it. When something fails, teams need to identify the root cause quickly. This requires small test scope, descriptive names, and informative assertion messages — not vague signals pointing nowhere.</p>
+    </div>
+  </div>
+  <div class="scard-body">
+    <div class="qrow" data-qid="4_1">
+      <div class="qtext">When a test fails, we can identify the root cause quickly without extensive investigation across many components or services.</div>
+      <div class="rbts"><button class="rbt" data-v="1">1</button><button class="rbt" data-v="2">2</button><button class="rbt" data-v="3">3</button><button class="rbt" data-v="4">4</button></div>
+    </div>
+    <div class="qrow" data-qid="4_2">
+      <div class="qtext">Test names clearly and specifically describe the behavior under test and the expected outcome, so anyone reading the results understands what was verified.</div>
+      <div class="rbts"><button class="rbt" data-v="1">1</button><button class="rbt" data-v="2">2</button><button class="rbt" data-v="3">3</button><button class="rbt" data-v="4">4</button></div>
+    </div>
+    <div class="qrow" data-qid="4_3">
+      <div class="qtext">Assertion messages are specific and informative, providing clear context about what was expected versus what actually happened.</div>
+      <div class="rbts"><button class="rbt" data-v="1">1</button><button class="rbt" data-v="2">2</button><button class="rbt" data-v="3">3</button><button class="rbt" data-v="4">4</button></div>
+    </div>
+    <div class="qrow" data-qid="4_4">
+      <div class="qtext">Individual tests are narrow enough in scope that a failure reliably points to a specific, well-bounded area of the product or codebase.</div>
+      <div class="rbts"><button class="rbt" data-v="1">1</button><button class="rbt" data-v="2">2</button><button class="rbt" data-v="3">3</button><button class="rbt" data-v="4">4</button></div>
+    </div>
+  </div>
+  <div class="sscore"><span class="sscore-lbl">Section score</span><div class="sscore-track"><div class="sscore-fill" id="sf-4"></div></div><span class="sscore-pct" id="sp-4">—</span></div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ SECTION 5 -->
+<div class="scard" data-sec="5" data-max="20">
+  <div class="scard-head">
+    <div class="snum">5</div>
+    <div>
+      <h3>Efficiency &amp; Test Design</h3>
+      <p>Feedback must be fast as well as valuable. Choosing the right test type for each scenario, avoiding coverage duplication, and decomposing large E2E tests into faster alternatives directly determines how quickly the team can act on results.</p>
+    </div>
+  </div>
+  <div class="scard-body">
+    <div class="qrow" data-qid="5_1">
+      <div class="qtext">We actively measure and work to reduce test suite execution time, treating slow feedback as a problem worth solving.</div>
+      <div class="rbts"><button class="rbt" data-v="1">1</button><button class="rbt" data-v="2">2</button><button class="rbt" data-v="3">3</button><button class="rbt" data-v="4">4</button></div>
+    </div>
+    <div class="qrow" data-qid="5_2">
+      <div class="qtext">We use the most appropriate test type — unit, API/integration, E2E — for each scenario, choosing based on what needs to be verified rather than habit or convenience.</div>
+      <div class="rbts"><button class="rbt" data-v="1">1</button><button class="rbt" data-v="2">2</button><button class="rbt" data-v="3">3</button><button class="rbt" data-v="4">4</button></div>
+    </div>
+    <div class="qrow" data-qid="5_3">
+      <div class="qtext">We avoid duplicating the same scenarios across multiple test levels — behaviors well-covered by unit tests are not redundantly re-tested as E2E tests.</div>
+      <div class="rbts"><button class="rbt" data-v="1">1</button><button class="rbt" data-v="2">2</button><button class="rbt" data-v="3">3</button><button class="rbt" data-v="4">4</button></div>
+    </div>
+    <div class="qrow" data-qid="5_4">
+      <div class="qtext">We have decomposed slow or brittle E2E tests into faster, more targeted alternatives — API tests, component tests, or contract tests — where it was appropriate to do so.</div>
+      <div class="rbts"><button class="rbt" data-v="1">1</button><button class="rbt" data-v="2">2</button><button class="rbt" data-v="3">3</button><button class="rbt" data-v="4">4</button></div>
+    </div>
+    <div class="qrow" data-qid="5_5">
+      <div class="qtext">External dependencies — third-party services, databases, message brokers — are managed thoughtfully using mocks, stubs, or contract tests where appropriate.</div>
+      <div class="rbts"><button class="rbt" data-v="1">1</button><button class="rbt" data-v="2">2</button><button class="rbt" data-v="3">3</button><button class="rbt" data-v="4">4</button></div>
+    </div>
+  </div>
+  <div class="sscore"><span class="sscore-lbl">Section score</span><div class="sscore-track"><div class="sscore-fill" id="sf-5"></div></div><span class="sscore-pct" id="sp-5">—</span></div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ SECTION 6 -->
+<div class="scard" data-sec="6" data-max="16">
+  <div class="scard-head">
+    <div class="snum">6</div>
+    <div>
+      <h3>The Test Automation Quadrant</h3>
+      <p>Every test can be positioned on two axes: information value and efficiency. Maximize tests in the high-value, high-efficiency quadrant. Retain high-value, low-efficiency tests despite their cost. Deprioritize low-value tests and eliminate those that are also inefficient — regardless of how easy they are to run.</p>
+    </div>
+  </div>
+  <div class="scard-body">
+    <div class="qrow" data-qid="6_1">
+      <div class="qtext">We regularly assess whether each part of our test suite delivers high information value relative to the cost and effort of maintaining and running it.</div>
+      <div class="rbts"><button class="rbt" data-v="1">1</button><button class="rbt" data-v="2">2</button><button class="rbt" data-v="3">3</button><button class="rbt" data-v="4">4</button></div>
+    </div>
+    <div class="qrow" data-qid="6_2">
+      <div class="qtext">Low-value tests — those confirming behaviors no one cares about, or that duplicate coverage already provided elsewhere — are actively removed rather than accumulated indefinitely.</div>
+      <div class="rbts"><button class="rbt" data-v="1">1</button><button class="rbt" data-v="2">2</button><button class="rbt" data-v="3">3</button><button class="rbt" data-v="4">4</button></div>
+    </div>
+    <div class="qrow" data-qid="6_3">
+      <div class="qtext">We apply shift-left practices — bringing testing earlier into the development lifecycle — to catch issues when they are cheapest to fix.</div>
+      <div class="rbts"><button class="rbt" data-v="1">1</button><button class="rbt" data-v="2">2</button><button class="rbt" data-v="3">3</button><button class="rbt" data-v="4">4</button></div>
+    </div>
+    <div class="qrow" data-qid="6_4">
+      <div class="qtext">We continuously look for ways to preserve or increase information value while reducing test execution time and ongoing maintenance burden.</div>
+      <div class="rbts"><button class="rbt" data-v="1">1</button><button class="rbt" data-v="2">2</button><button class="rbt" data-v="3">3</button><button class="rbt" data-v="4">4</button></div>
+    </div>
+  </div>
+  <div class="sscore"><span class="sscore-lbl">Section score</span><div class="sscore-track"><div class="sscore-fill" id="sf-6"></div></div><span class="sscore-pct" id="sp-6">—</span></div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ SECTION 7 -->
+<div class="scard" data-sec="7" data-max="16">
+  <div class="scard-head">
+    <div class="snum">7</div>
+    <div>
+      <h3>Pipeline &amp; Tooling</h3>
+      <p>Test automation is most effective when embedded in the development workflow and tools are chosen deliberately. Pipeline design should amplify your testing strategy — not constrain it. Tool choices should follow strategy, not precede it.</p>
+    </div>
+  </div>
+  <div class="scard-body">
+    <div class="qrow" data-qid="7_1">
+      <div class="qtext">Automated tests run automatically in our CI/CD pipeline on every relevant code change, providing feedback before code is merged or deployed.</div>
+      <div class="rbts"><button class="rbt" data-v="1">1</button><button class="rbt" data-v="2">2</button><button class="rbt" data-v="3">3</button><button class="rbt" data-v="4">4</button></div>
+    </div>
+    <div class="qrow" data-qid="7_2">
+      <div class="qtext">Tool and framework selection is driven by our strategy, context, and team needs — not by industry trends, vendor marketing, or the path of least resistance.</div>
+      <div class="rbts"><button class="rbt" data-v="1">1</button><button class="rbt" data-v="2">2</button><button class="rbt" data-v="3">3</button><button class="rbt" data-v="4">4</button></div>
+    </div>
+    <div class="qrow" data-qid="7_3">
+      <div class="qtext">Our pipeline is designed to deliver fast feedback — for example through parallel execution, staged test runs, or test selection strategies.</div>
+      <div class="rbts"><button class="rbt" data-v="1">1</button><button class="rbt" data-v="2">2</button><button class="rbt" data-v="3">3</button><button class="rbt" data-v="4">4</button></div>
+    </div>
+    <div class="qrow" data-qid="7_4">
+      <div class="qtext">We regularly evaluate whether our current tools and infrastructure still serve our needs as the product, team, and context evolve.</div>
+      <div class="rbts"><button class="rbt" data-v="1">1</button><button class="rbt" data-v="2">2</button><button class="rbt" data-v="3">3</button><button class="rbt" data-v="4">4</button></div>
+    </div>
+  </div>
+  <div class="sscore"><span class="sscore-lbl">Section score</span><div class="sscore-track"><div class="sscore-fill" id="sf-7"></div></div><span class="sscore-pct" id="sp-7">—</span></div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ SECTION 8 -->
+<div class="scard" data-sec="8" data-max="16">
+  <div class="scard-head">
+    <div class="snum">8</div>
+    <div>
+      <h3>Team &amp; Skills</h3>
+      <p>Sustainable test automation requires the right skills distributed across the team, genuine shared ownership, and continuous investment in people. Centralizing automation knowledge in one person or role is one of the most common failure patterns.</p>
+    </div>
+  </div>
+  <div class="scard-body">
+    <div class="qrow" data-qid="8_1">
+      <div class="qtext">Our team collectively has the skills and knowledge needed to write, maintain, improve, and evolve our automated tests without depending on a single specialist.</div>
+      <div class="rbts"><button class="rbt" data-v="1">1</button><button class="rbt" data-v="2">2</button><button class="rbt" data-v="3">3</button><button class="rbt" data-v="4">4</button></div>
+    </div>
+    <div class="qrow" data-qid="8_2">
+      <div class="qtext">Test automation is a shared team responsibility — not delegated to a single person, dedicated tester, or a separate QA function operating in isolation.</div>
+      <div class="rbts"><button class="rbt" data-v="1">1</button><button class="rbt" data-v="2">2</button><button class="rbt" data-v="3">3</button><button class="rbt" data-v="4">4</button></div>
+    </div>
+    <div class="qrow" data-qid="8_3">
+      <div class="qtext">We have identified skills gaps in test automation design and implementation, and we have a concrete plan to address them.</div>
+      <div class="rbts"><button class="rbt" data-v="1">1</button><button class="rbt" data-v="2">2</button><button class="rbt" data-v="3">3</button><button class="rbt" data-v="4">4</button></div>
+    </div>
+    <div class="qrow" data-qid="8_4">
+      <div class="qtext">Team members can independently diagnose and fix test failures — distinguishing whether a failure originates in the product, the test code, or the infrastructure.</div>
+      <div class="rbts"><button class="rbt" data-v="1">1</button><button class="rbt" data-v="2">2</button><button class="rbt" data-v="3">3</button><button class="rbt" data-v="4">4</button></div>
+    </div>
+  </div>
+  <div class="sscore"><span class="sscore-lbl">Section score</span><div class="sscore-track"><div class="sscore-fill" id="sf-8"></div></div><span class="sscore-pct" id="sp-8">—</span></div>
+</div>
+
+<button class="cta-btn" id="cta-btn" disabled onclick="showResults()">View My Results</button>
+
+<!-- ═══════════════════════════════════════════════════ RESULTS -->
+<div class="results" id="results">
+  <div class="results-hero">
+    <h2>Your Assessment Results</h2>
+    <div class="big-score" id="r-score">—</div>
+    <div class="score-sub">overall maturity score (out of 144)</div>
+    <div class="mbadge" id="r-badge">—</div>
+  </div>
+  <div class="results-body">
+    <p class="results-desc" id="r-desc"></p>
+    <h3 style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:12px;">Score by dimension</h3>
+    <div class="breakdown-grid" id="r-breakdown"></div>
+    <div class="next-steps">
+      <h3>Recommended next steps</h3>
+      <div class="steps" id="r-steps"></div>
+      <div id="r-focus"></div>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<footer>
+  <p>Based on the <strong>Valuable Feedback, Fast</strong> framework by <a href="https://www.ontestautomation.com" target="_blank">Bas Dijkstra</a></p>
+  <p style="margin-top:6px;">
+    <a href="https://www.ontestautomation.com/the-test-automation-quadrant/" target="_blank">The Test Automation Quadrant</a> &middot;
+    <a href="https://www.ontestautomation.com/the-valuable-in-valuable-feedback-fast/" target="_blank">The Valuable in Valuable Feedback, Fast</a> &middot;
+    <a href="https://www.ontestautomation.com/training/valuable-feedback-fast/" target="_blank">Valuable Feedback, Fast Training</a>
+  </p>
+</footer>
+
+<script>
+const SECTIONS = [
+  { id:1, name:'Strategy & Purpose',              max:20 },
+  { id:2, name:'Coverage — Testing What Matters', max:20 },
+  { id:3, name:'Trustworthiness',                 max:20 },
+  { id:4, name:'Actionability',                   max:16 },
+  { id:5, name:'Efficiency & Test Design',        max:20 },
+  { id:6, name:'The Test Automation Quadrant',    max:16 },
+  { id:7, name:'Pipeline & Tooling',              max:16 },
+  { id:8, name:'Team & Skills',                   max:16 },
+];
+const TOTAL_MAX = 144;
+const TOTAL_Q   = 36;
+
+const answers = {};
+
+function maturity(pct) {
+  if (pct >= 76) return { label:'Optimizing', cls:'optimizing', bar:'c-optimizing' };
+  if (pct >= 51) return { label:'Practicing',  cls:'practicing',  bar:'c-practicing'  };
+  if (pct >= 26) return { label:'Developing',  cls:'developing',  bar:'c-developing'  };
+  return                 { label:'Early',       cls:'early',       bar:'c-early'       };
+}
+
+function secScore(sid) {
+  return Object.entries(answers)
+    .filter(([k]) => k.startsWith(sid + '_'))
+    .reduce((s,[,v]) => s+v, 0);
+}
+function secAnswered(sid) {
+  return Object.keys(answers).filter(k => k.startsWith(sid + '_')).length;
+}
+
+function refresh() {
+  const total    = Object.values(answers).reduce((s,v) => s+v, 0);
+  const answered = Object.keys(answers).length;
+
+  document.getElementById('prog-label').textContent = answered + ' of ' + TOTAL_Q + ' answered';
+  document.getElementById('prog-fill').style.width  = (answered/TOTAL_Q*100) + '%';
+  document.getElementById('prog-score').textContent = total + ' / ' + TOTAL_MAX;
+
+  SECTIONS.forEach(s => {
+    const sc  = secScore(s.id);
+    const ans = secAnswered(s.id);
+    if (ans > 0) {
+      const pct = Math.round(sc / s.max * 100);
+      document.getElementById('sf-'+s.id).style.width = pct + '%';
+      document.getElementById('sp-'+s.id).textContent  = pct + '%';
+    }
+  });
+
+  const btn = document.getElementById('cta-btn');
+  btn.disabled = answered === 0;
+  if (answered === TOTAL_Q) {
+    btn.textContent = 'View My Results';
+  } else if (answered > 0) {
+    btn.textContent = 'View Partial Results (' + answered + '/' + TOTAL_Q + ' answered)';
+  } else {
+    btn.textContent = 'View My Results';
+  }
+}
+
+document.querySelectorAll('.qrow').forEach(row => {
+  const qid = row.dataset.qid;
+  row.querySelectorAll('.rbt').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const v = parseInt(btn.dataset.v);
+      answers[qid] = v;
+      row.querySelectorAll('.rbt').forEach(b => b.className = 'rbt');
+      btn.classList.add('sel'+v);
+      refresh();
+    });
+  });
+});
+
+const DESCS = {
+  early:      'Your team is at the beginning of the test automation journey. A clear, shared strategy is likely missing, and tests that exist may not be consistently trustworthy or well-targeted. This is the most important moment to get right: patterns established now will shape your practice for years. Focus on foundations — strategy, risk discussions, and trustworthiness — before scaling the number of tests.',
+  developing: 'Your team has made a start and some good practices are emerging. Gaps remain — perhaps in the reliability of your tests, the alignment of coverage with risk, or in how well automation is embedded in your development workflow. Targeted improvements in your lowest-scoring dimensions will have the most impact right now.',
+  practicing: 'Your test automation practice is solid and delivering real value. Tests are mostly trustworthy, coverage reflects what matters, and the team shares ownership. The opportunity is to optimize — applying the Test Automation Quadrant more rigorously, decomposing heavy tests, and continuously improving efficiency without losing the information value you already deliver.',
+  optimizing: 'Your team has a mature, high-quality test automation practice. Tests are trustworthy, well-targeted, efficient, and embedded in the development workflow. The challenge at this level is sustaining excellence as the product, team, and context evolve. Focus on your lowest-scoring dimensions for the next incremental improvement, and consider how you can share your experience with others.',
+};
+
+const STEPS = {
+  early: [
+    { n:1, title:'Start with strategy, not tools', body:'Before writing more tests, define what information you need, who needs it, and how quickly. A clear purpose prevents wasted effort and builds alignment across the team.' },
+    { n:2, title:'Address flaky tests immediately', body:'Unreliable tests are worse than no tests — teams that ignore flakiness eventually stop trusting results entirely. Fix or delete every test that fails intermittently for reasons other than product defects.' },
+    { n:3, title:'Conduct a risk-based coverage discussion', body:'Bring together developers, testers, and product people to identify the highest-risk behaviors in your product. Start automating there — not with what is easy or what you already know how to test.' },
+    { n:4, title:'Make automation a team skill, not a specialism', body:'Avoid centralizing automation knowledge in one person. Start pair-programming on tests, run ensemble sessions, and share code ownership across the team from day one.' },
+  ],
+  developing: [
+    { n:1, title:'Eliminate low-value tests', body:'Review your suite against the Test Automation Quadrant: classify tests by information value and efficiency. Remove tests in the low-value, low-efficiency quadrant without hesitation — they cost more than they contribute.' },
+    { n:2, title:'Decompose your heaviest E2E tests', body:'Identify your slowest or most brittle end-to-end tests. Explore whether parts of them can be replaced with API tests, consumer-driven contract tests, or component tests — preserving the information value while gaining speed.' },
+    { n:3, title:'Tighten pipeline integration', body:'If test feedback takes hours, it will be ignored. Ensure tests run automatically on every relevant change. Parallelise and stage your runs to get actionable results in minutes, not hours.' },
+    { n:4, title:'Make results meaningful to stakeholders', body:'If product owners or business stakeholders never read your test reports, the information is not reaching who matters. Improve naming, reporting format, and how you communicate test outcomes.' },
+  ],
+  practicing: [
+    { n:1, title:'Apply the Test Automation Quadrant systematically', body:'Regularly review every test against value and efficiency. For tests in the high-value, low-efficiency quadrant: can the same information be obtained with a simpler, faster test? If so, make the change.' },
+    { n:2, title:'Design for testability upstream', body:'Testability must be built in, not added afterwards. Involve automation thinking at the design and architecture stage — make testability and automatability first-class engineering concerns.' },
+    { n:3, title:'Invest in test infrastructure', body:'At this maturity level, infrastructure is often the bottleneck. Invest in better tooling, environment management, and pipeline optimizations to sustain fast feedback as the product and team scale.' },
+    { n:4, title:'Build a concrete skills development plan', body:'Identify the specific capabilities limiting your next improvement — test design, contract testing, observability, or automation strategy. Build a targeted learning plan rather than generic training.' },
+  ],
+  optimizing: [
+    { n:1, title:'Sustain excellence through change', body:'At this level, the risk is drift. As the team grows and the product evolves, the practices that got you here need active maintenance. Review your strategy at least quarterly against current product risks and team context.' },
+    { n:2, title:'Expand the quadrant model beyond functional tests', body:'Apply the same value-and-efficiency thinking to performance testing, security testing, and observability. Each domain benefits from explicit decisions about what information to chase and at what cost.' },
+    { n:3, title:'Contribute to the broader community', body:'Your experience is rare and valuable. Consider sharing it — through open source contributions, writing, speaking at meetups, or mentoring teams earlier in the journey. Teaching also deepens your own understanding.' },
+    { n:4, title:'Continue monitoring your weakest dimensions', body:'Even at this level, some dimensions will score lower than others. Use the section breakdown above to guide your next quarter of improvement work.' },
+  ],
+};
+
+function showResults() {
+  const total   = Object.values(answers).reduce((s,v) => s+v, 0);
+  const pct     = Math.round(total / TOTAL_MAX * 100);
+  const m       = maturity(pct);
+
+  document.getElementById('r-score').textContent = pct + '%';
+  const badge = document.getElementById('r-badge');
+  badge.textContent  = m.label;
+  badge.className    = 'mbadge m-' + m.cls;
+  document.getElementById('r-desc').textContent = DESCS[m.cls];
+
+  // Section breakdown
+  const grid = document.getElementById('r-breakdown');
+  grid.innerHTML = '';
+  SECTIONS.forEach(s => {
+    const sc  = secScore(s.id);
+    const ans = secAnswered(s.id);
+    const spct = ans > 0 ? Math.round(sc / s.max * 100) : 0;
+    const bm  = maturity(spct);
+    grid.innerHTML += '<div class="bc"><div class="bc-name">'+s.name+'</div>'
+      + '<div class="bc-track"><div class="bc-fill '+bm.bar+'" style="width:'+spct+'%"></div></div>'
+      + '<div class="bc-pct">'+(ans > 0 ? spct+'%' : 'Not answered')+'</div></div>';
+  });
+
+  // Steps
+  const stepsEl = document.getElementById('r-steps');
+  stepsEl.innerHTML = '';
+  (STEPS[m.cls] || []).forEach(s => {
+    stepsEl.innerHTML += '<div class="step"><div class="step-n">'+s.n+'</div>'
+      + '<div><h4>'+s.title+'</h4><p>'+s.body+'</p></div></div>';
+  });
+
+  // Weakest dimensions note
+  const ranked = SECTIONS
+    .map(s => ({ name: s.name, pct: secAnswered(s.id) > 0 ? Math.round(secScore(s.id)/s.max*100) : null }))
+    .filter(s => s.pct !== null)
+    .sort((a,b) => a.pct - b.pct)
+    .slice(0, 2);
+
+  const focusEl = document.getElementById('r-focus');
+  if (ranked.length > 0) {
+    const names = ranked.map(s => '<strong>'+s.name+'</strong>').join(' and ');
+    focusEl.innerHTML = '<div class="focus-note"><strong>Your lowest-scoring dimensions:</strong> '
+      + names + '. Improvements here will have the greatest impact on your overall maturity.</div>';
+  }
+
+  const el = document.getElementById('results');
+  el.style.display = 'block';
+  el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+refresh();
+</script>
+</body>
+</html>
