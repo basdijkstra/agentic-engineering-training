@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Valuable Feedback, Fast</title>
+<style>
+:root {
+  --navy: #1e3a5f;
+  --teal: #0096c7;
+  --text: #2d3748;
+  --muted: #718096;
+  --border: #e2e8f0;
+  --bg: #f7fafc;
+  --radius: 12px;
+  --shadow: 0 4px 20px rgba(0,0,0,0.07);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+
+/* ── Nav ── */
+.site-nav { position: sticky; top: 0; z-index: 200; background: #0a1628; border-bottom: 1px solid rgba(255,255,255,0.08); padding: 0 24px; }
+.nav-inner { max-width: 860px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 48px; }
+.nav-brand { font-size: 14px; font-weight: 700; color: #e2e8f0; text-decoration: none; }
+.nav-links { display: flex; gap: 4px; }
+.nav-link { font-size: 13px; font-weight: 600; color: #94a3b8; text-decoration: none; padding: 6px 12px; border-radius: 6px; transition: all .15s; }
+.nav-link:hover { color: #e2e8f0; background: rgba(255,255,255,0.08); }
+.nav-link.active { color: #fff; background: rgba(255,255,255,0.12); }
+
+/* ── Hero ── */
+.hero { background: linear-gradient(145deg, #112240 0%, #1e3a5f 60%, #1a5276 100%); color: #fff; padding: 56px 24px 48px; text-align: center; }
+.hero-label { font-size: 12px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: #7dd3fc; margin-bottom: 14px; }
+.hero h1 { font-size: clamp(26px, 4vw, 42px); font-weight: 800; line-height: 1.2; margin-bottom: 12px; }
+.hero-sub { font-size: 17px; color: #bfdbfe; max-width: 560px; margin: 0 auto; }
+
+/* ── Layout ── */
+.main { max-width: 680px; margin: 52px auto; padding: 0 20px; }
+
+/* ── Bio card ── */
+.bio { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 32px 36px; margin-bottom: 28px; box-shadow: var(--shadow); }
+.bio p { font-size: 15.5px; color: var(--text); line-height: 1.75; margin-bottom: 16px; }
+.bio p:last-child { margin-bottom: 0; }
+
+/* ── Framework section ── */
+.framework { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 32px 36px; margin-bottom: 52px; box-shadow: var(--shadow); }
+.framework h2 { font-size: 19px; font-weight: 800; color: var(--navy); margin-bottom: 16px; }
+.framework p { font-size: 15.5px; color: var(--text); line-height: 1.75; margin-bottom: 16px; }
+.framework p:last-child { margin-bottom: 0; }
+
+/* ── Footer ── */
+footer { text-align: center; padding: 32px 20px; font-size: 13.5px; color: var(--muted); border-top: 1px solid var(--border); }
+footer a { color: var(--teal); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="valuable-feedback-fast-assessment.html" class="nav-brand">Valuable Feedback, Fast</a>
+    <div class="nav-links">
+      <a href="valuable-feedback-fast-assessment.html" class="nav-link">Assessment</a>
+      <a href="resources.html" class="nav-link">Resources</a>
+      <a href="testimonials.html" class="nav-link">Testimonials</a>
+      <a href="about.html" class="nav-link active">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-label">Valuable Feedback, Fast</div>
+  <h1>The person behind the framework</h1>
+  <p class="hero-sub">Test automation consultant, trainer, and someone who has spent a career telling teams things they didn't want to hear — but needed to.</p>
+</header>
+
+<main class="main">
+
+  <div class="bio">
+    <p>Bas Dijkstra is an independent test automation consultant and trainer based in the Netherlands. For the better part of two decades, he's been helping software teams figure out why their test automation isn't delivering the value they were promised — and what to actually do about it.</p>
+    <p>The answer is almost never "switch to a different tool." It's usually something more uncomfortable: the wrong tests at the wrong level, a suite nobody trusts, feedback that arrives too late to be useful. Bas's job is to say that out loud, and then help teams do something about it.</p>
+    <p>He's worked across industries and team sizes, from small startups moving fast to large enterprises moving carefully. What they tend to have in common is that their test automation is trying to do too much, and doing none of it particularly well. He finds that strangely satisfying to fix.</p>
+    <p>When he's not consulting or training, he writes about test automation at <a href="https://www.ontestautomation.com" target="_blank" rel="noopener">ontestautomation.com</a> — which has been running long enough that some of the early posts are now historical artefacts. He speaks at conferences, runs workshops, and occasionally argues on the internet about testing strategy. That last one is free.</p>
+  </div>
+
+  <div class="framework">
+    <h2>About the Valuable Feedback, Fast framework</h2>
+    <p>The framework came out of a recurring observation: teams were investing heavily in test automation but struggling to articulate what they were getting back from it. The suites were large. The runs were slow. The failures were often flaky. The feedback, when it arrived, was hard to act on.</p>
+    <p>Valuable Feedback, Fast is an attempt to name what good actually looks like. Not in terms of tools or techniques, but in terms of outcomes: does your automation tell you something useful, quickly enough to matter, reliably enough to trust? Eight dimensions, thirty-six questions, one honest answer about where you stand.</p>
+    <p>The assessment won't tell you which framework to use. It will tell you where your practice is strong, where it's not, and what to focus on next. That's the point.</p>
+  </div>
+
+</main>
+
+<footer>
+  <p>Based on the <strong>Valuable Feedback, Fast</strong> framework by <a href="https://www.ontestautomation.com" target="_blank">Bas Dijkstra</a></p>
+</footer>
+
+</body>
+</html>
