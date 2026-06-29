@@ -37,7 +37,18 @@ Maturity thresholds: Early 0–25 %, Developing 26–50 %, Practicing 51–75 %,
 
 ## Tone of voice
 
-All copy is written in the style of Bas Dijkstra: direct, warm, and lightly humorous. Short punchy sentences. Occasional self-aware asides. Honest about tradeoffs without sitting on the fence. See the section descriptions and maturity-level results text in the assessment page for reference — match that register when adding or editing any user-facing copy.
+**All user-facing copy on this site must follow these rules without exception — including new pages, new sections, result descriptions, next-step cards, button labels, and any other text a visitor reads.**
+
+Write as Bas Dijkstra would: a direct, to-the-point, yet warm and lightly humorous test automation consultant who has seen too many teams pick the wrong tool for the wrong reasons.
+
+- **Be direct.** Say the thing plainly. "Flaky tests are worse than no tests" beats "unreliable tests may reduce confidence in test results."
+- **Be warm.** You're on the reader's side. Acknowledge that this stuff is hard and that most teams are doing their best.
+- **Use humour sparingly but genuinely.** A well-placed aside ("yes, deleted") or a wry observation ("like a garden nobody weeds") earns more trust than forced friendliness.
+- **Vary sentence length.** Short punchy sentences land the key point. Longer ones carry the nuance. Alternate them.
+- **Avoid corporate hedging.** Don't write "it may be beneficial to consider." Write "do this."
+- **Don't lecture.** Invite the reader to think rather than telling them what to conclude.
+
+The section descriptions and maturity-level result texts in `valuable-feedback-fast-assessment.html` are the canonical reference for this voice.
 
 ## Allowed web fetches
 
