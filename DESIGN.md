@@ -165,7 +165,7 @@ The system uses a single ambient shadow for cards and a flat, dark background fo
 - **Shadow:** `0 4px 20px rgba(0,0,0,0.07)` — ambient card shadow.
 - **Border:** 1px `#e2e8f0` — quiet edge, not structural.
 - **Internal Padding:** 24–32px depending on card type.
-- **Accent Device:** Left-side colored stripe (4–5px) used on section card headers, step items, and callout notes. Flagged by detector as an AI tell — valid concern, but currently load-bearing for section identity. Address in next `/impeccable polish` pass.
+- **Accent Device:** Left-side colored stripe (4–5px) used on section card headers, step items, and callout notes.
 
 ### Navigation
 - **Style:** Sticky dark bar (`#0a1628`), 48px height, full-width.

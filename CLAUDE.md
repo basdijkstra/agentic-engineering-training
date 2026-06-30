@@ -14,18 +14,24 @@ A self-contained, three-page static HTML site built around the **Valuable Feedba
 | `resources.html` | Links to related blog posts and training courses |
 | `about.html` | Bio and framework origin |
 | `testimonials.html` | User testimonials; managed via the `/add-testimonial` skill |
-| `contact.html` | Links to Bas's contact page and LinkedIn profile |
 
 ## Architecture
 
-All five pages share:
-- **Identical nav markup** — sticky bar with brand link + Assessment / Resources / Contact links. Active page gets `class="nav-link active"`. When adding a page, update the nav in all three files.
+All four pages share:
+- **Identical nav markup** — sticky bar with brand link + Assessment / Resources / Testimonials / About links. Active page gets `class="nav-link active"`. When adding a page, update the nav in all four files.
 - **Identical CSS custom properties** — `--navy`, `--teal`, `--text`, `--muted`, `--border`, `--bg`, `--radius`, `--shadow` defined in `:root`. Use these; don't introduce new colour values.
 - **Identical nav and footer patterns** — copy from an existing page when adding a new one.
 
 ## Tests
 
-Run the test suite after every change:
+Use test-driven development for every change or new feature:
+
+1. Write a failing test that captures the expected behaviour.
+2. Run the suite and confirm the new test fails.
+3. Implement the change or feature.
+4. Run the suite again and confirm all tests pass.
+
+Run the test suite:
 
 ```bash
 node --test tests/about-page.test.js
