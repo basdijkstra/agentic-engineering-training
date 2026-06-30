@@ -5,5 +5,21 @@
   "enabledPlugins": {
     "skill-creator@claude-plugins-official": true,
     "superpowers@claude-plugins-official": true
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node --test tests/about-page.test.js tests/contact-page.test.js",
+            "shell": "bash",
+            "timeout": 30,
+            "statusMessage": "Running tests..."
+          }
+        ]
+      }
+    ]
   }
 }

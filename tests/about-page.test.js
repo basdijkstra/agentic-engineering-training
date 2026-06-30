@@ -34,9 +34,11 @@ test('every existing page nav includes a link to about.html', () => {
     'valuable-feedback-fast-assessment.html',
     'resources.html',
     'testimonials.html',
+    'contact.html',
   ];
   for (const page of pages) {
     const html = read(page);
     assert.match(html, /href="about\.html"/, `${page} is missing an About nav link`);
   }
 });
+
