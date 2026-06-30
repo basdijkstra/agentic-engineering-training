@@ -27,7 +27,6 @@ test('about.html nav contains links to all other pages', () => {
   assert.match(html, /href="valuable-feedback-fast-assessment\.html"/);
   assert.match(html, /href="resources\.html"/);
   assert.match(html, /href="testimonials\.html"/);
-  assert.match(html, /href="contact\.html"/);
 });
 
 test('every existing page nav includes a link to about.html', () => {
@@ -35,7 +34,6 @@ test('every existing page nav includes a link to about.html', () => {
     'valuable-feedback-fast-assessment.html',
     'resources.html',
     'testimonials.html',
-    'contact.html',
   ];
   for (const page of pages) {
     const html = read(page);

@@ -4,7 +4,6 @@
   ],
   "enabledPlugins": {
     "skill-creator@claude-plugins-official": true,
-    "impeccable@impeccable": true,
     "superpowers@claude-plugins-official": true
   }
 }
