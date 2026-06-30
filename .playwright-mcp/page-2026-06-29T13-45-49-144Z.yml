@@ -1,0 +1,81 @@
+- generic [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "Valuable Feedback, Fast" [ref=e4] [cursor=pointer]:
+        - /url: valuable-feedback-fast-assessment.html
+      - generic [ref=e5]:
+        - link "Assessment" [ref=e6] [cursor=pointer]:
+          - /url: valuable-feedback-fast-assessment.html
+        - link "Resources" [ref=e7] [cursor=pointer]:
+          - /url: resources.html
+        - link "Testimonials" [ref=e8] [cursor=pointer]:
+          - /url: testimonials.html
+        - link "About" [ref=e9] [cursor=pointer]:
+          - /url: about.html
+        - link "Contact" [ref=e10] [cursor=pointer]:
+          - /url: contact.html
+  - banner [ref=e11]:
+    - generic [ref=e12]: Valuable Feedback, Fast
+    - heading "What people are saying" [level=1] [ref=e13]
+    - paragraph [ref=e14]: Real teams, real results. Here's what people have taken away from the assessment — in their own words.
+  - main [ref=e15]:
+    - generic [ref=e16]:
+      - generic [ref=e19]:
+        - generic [ref=e20]: ★★★★☆
+        - blockquote [ref=e21]: "\"This was awesome.\""
+        - generic [ref=e22]: — Test. Imonial.
+      - generic [ref=e25]:
+        - generic [ref=e26]: ★★☆☆☆
+        - blockquote [ref=e27]: "\"Meh.\""
+        - generic [ref=e28]: — Bas Dijkstra
+      - generic [ref=e31]:
+        - generic [ref=e32]: ★★★★☆
+        - blockquote [ref=e33]: "\"This was fantastic!\""
+        - generic [ref=e34]: — Banana Nana
+    - generic [ref=e35]:
+      - heading "Taken the assessment?" [level=2] [ref=e36]
+      - paragraph [ref=e37]: We'd love to hear what you found — and what you're going to do about it. Your experience helps others know what to expect.
+      - link "Get in touch" [ref=e38] [cursor=pointer]:
+        - /url: contact.html
+  - contentinfo [ref=e39]:
+    - paragraph [ref=e40]:
+      - text: Based on the
+      - strong [ref=e41]: Valuable Feedback, Fast
+      - text: framework by
+      - link "Bas Dijkstra" [ref=e42] [cursor=pointer]:
+        - /url: https://www.ontestautomation.com
+  - generic [ref=e43]:
+    - img "Impeccable live mode - agent not polling" [ref=e44]:
+      - img [ref=e46]
+    - generic [ref=e49]:
+      - button "Pick element" [ref=e50] [cursor=pointer]:
+        - img [ref=e51]
+        - generic: Pick
+      - button "Insert new element" [ref=e53] [cursor=pointer]:
+        - img [ref=e54]
+        - generic: Insert
+      - button "Detect anti-patterns" [ref=e55] [cursor=pointer]:
+        - img [ref=e56]
+        - generic: Detect
+      - button "Toggle DESIGN.md panel" [ref=e59] [cursor=pointer]:
+        - generic: DESIGN.md
+      - generic "Steer the page" [ref=e65] [cursor=pointer]:
+        - generic:
+          - img
+        - textbox "Steer the page" [active] [ref=e66]:
+          - /placeholder: Steer…
+        - button "Voice input" [ref=e67]:
+          - img [ref=e68]
+      - button "Exit live mode" [ref=e72] [cursor=pointer]:
+        - img [ref=e73]
+  - generic:
+    - generic:
+      - complementary:
+        - generic:
+          - generic: DESIGN.md
+          - generic:
+            - button "Visual"
+            - button "Raw"
+          - button "Close panel": ✕
+        - generic:
+          - generic: No design system data available.

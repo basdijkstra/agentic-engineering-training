@@ -1,7 +1,10 @@
 {
+  "enabledMcpjsonServers": [
+    "vff-resources"
+  ],
   "enabledPlugins": {
     "skill-creator@claude-plugins-official": true,
-    "impeccable@impeccable": true
-  },
-  "enabledMcpjsonServers": ["vff-resources"]
+    "impeccable@impeccable": true,
+    "superpowers@claude-plugins-official": true
+  }
 }

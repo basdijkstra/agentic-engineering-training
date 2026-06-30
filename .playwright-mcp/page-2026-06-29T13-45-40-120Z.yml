@@ -1,0 +1,94 @@
+- generic [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "Valuable Feedback, Fast" [ref=e4] [cursor=pointer]:
+        - /url: valuable-feedback-fast-assessment.html
+      - generic [ref=e5]:
+        - link "Assessment" [ref=e6] [cursor=pointer]:
+          - /url: valuable-feedback-fast-assessment.html
+        - link "Resources" [ref=e7] [cursor=pointer]:
+          - /url: resources.html
+        - link "Testimonials" [ref=e8] [cursor=pointer]:
+          - /url: testimonials.html
+        - link "About" [ref=e9] [cursor=pointer]:
+          - /url: about.html
+        - link "Contact" [ref=e10] [cursor=pointer]:
+          - /url: contact.html
+  - banner [ref=e11]:
+    - generic [ref=e12]: Valuable Feedback, Fast
+    - heading "Resources" [level=1] [ref=e13]
+    - paragraph [ref=e14]: The honest truth is that most test automation problems aren't about tools. These resources will help you and your team think differently about what you're actually trying to achieve.
+  - main [ref=e15]:
+    - paragraph [ref=e16]: Articles & Courses
+    - generic [ref=e17]:
+      - generic [ref=e20]:
+        - generic [ref=e22]: Blog post
+        - heading "The Test Automation Quadrant" [level=2] [ref=e23]
+        - paragraph [ref=e24]: "Not all tests deserve to exist — and this model makes that uncomfortably clear. The Test Automation Quadrant plots every test on two axes: information value and efficiency. The result is a straightforward framework for deciding what to invest in, what to tolerate despite the cost, what to deprioritize, and what to delete without a second thought. Worth a read even if you think your suite is in good shape."
+        - link "Read the article" [ref=e25] [cursor=pointer]:
+          - /url: https://www.ontestautomation.com/the-test-automation-quadrant/
+          - text: Read the article
+          - img [ref=e26]
+      - generic [ref=e30]:
+        - generic [ref=e32]: Course
+        - heading "Valuable Feedback, Fast (for engineers)" [level=2] [ref=e33]
+        - paragraph [ref=e34]: Three days of deliberate work on why your test automation does or doesn't deliver — and what to do about it. This isn't a tool tutorial. It covers strategy, risk-based coverage, test design, pipeline thinking, and how to leave with an actual plan rather than just a good feeling. Available in Java, C#, and TypeScript. Best for engineers and testers who are ready to move past "which framework should we use" and start asking better questions.
+        - link "View the course" [ref=e35] [cursor=pointer]:
+          - /url: https://www.ontestautomation.com/training/valuable-feedback-fast/
+          - text: View the course
+          - img [ref=e36]
+      - generic [ref=e40]:
+        - generic [ref=e42]: Course
+        - heading "Valuable Feedback, Fast — Applied (for teams)" [level=2] [ref=e43]
+        - paragraph [ref=e44]: This one is specifically for teams — meaning it works on your challenges, not a fictional case study. Over two days, you'll map your actual feedback loops, interrogate your test design choices, and figure out together what needs to change. You leave with a shared plan, not a slide deck nobody looks at again. Designed for teams of 6–25 who are ready to have the honest conversations that most teams quietly avoid.
+        - link "View the course" [ref=e45] [cursor=pointer]:
+          - /url: https://www.ontestautomation.com/training/valuable-feedback-fast-applied/
+          - text: View the course
+          - img [ref=e46]
+    - generic [ref=e48]:
+      - heading "Not sure where to start?" [level=2] [ref=e49]
+      - paragraph [ref=e50]: The assessment gives you an honest picture of where your team stands across eight dimensions — and tells you where the most valuable improvements are hiding.
+      - link "Take the assessment" [ref=e51] [cursor=pointer]:
+        - /url: valuable-feedback-fast-assessment.html
+  - contentinfo [ref=e52]:
+    - paragraph [ref=e53]:
+      - text: Based on the
+      - strong [ref=e54]: Valuable Feedback, Fast
+      - text: framework by
+      - link "Bas Dijkstra" [ref=e55] [cursor=pointer]:
+        - /url: https://www.ontestautomation.com
+  - generic [ref=e56]:
+    - img "Impeccable live mode - agent not polling" [ref=e57]:
+      - img [ref=e59]
+    - generic [ref=e62]:
+      - button "Pick element" [ref=e63] [cursor=pointer]:
+        - img [ref=e64]
+        - generic: Pick
+      - button "Insert new element" [ref=e66] [cursor=pointer]:
+        - img [ref=e67]
+        - generic: Insert
+      - button "Detect anti-patterns" [ref=e68] [cursor=pointer]:
+        - img [ref=e69]
+        - generic: Detect
+      - button "Toggle DESIGN.md panel" [ref=e72] [cursor=pointer]:
+        - generic: DESIGN.md
+      - generic "Steer the page" [ref=e78] [cursor=pointer]:
+        - generic:
+          - img
+        - textbox "Steer the page" [active] [ref=e79]:
+          - /placeholder: Steer…
+        - button "Voice input" [ref=e80]:
+          - img [ref=e81]
+      - button "Exit live mode" [ref=e85] [cursor=pointer]:
+        - img [ref=e86]
+  - generic:
+    - generic:
+      - complementary:
+        - generic:
+          - generic: DESIGN.md
+          - generic:
+            - button "Visual"
+            - button "Raw"
+          - button "Close panel": ✕
+        - generic:
+          - generic: No design system data available.

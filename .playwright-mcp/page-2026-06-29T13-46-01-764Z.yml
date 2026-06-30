@@ -1,0 +1,86 @@
+- generic [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "Valuable Feedback, Fast" [ref=e4] [cursor=pointer]:
+        - /url: valuable-feedback-fast-assessment.html
+      - generic [ref=e5]:
+        - link "Assessment" [ref=e6] [cursor=pointer]:
+          - /url: valuable-feedback-fast-assessment.html
+        - link "Resources" [ref=e7] [cursor=pointer]:
+          - /url: resources.html
+        - link "Testimonials" [ref=e8] [cursor=pointer]:
+          - /url: testimonials.html
+        - link "About" [ref=e9] [cursor=pointer]:
+          - /url: about.html
+        - link "Contact" [ref=e10] [cursor=pointer]:
+          - /url: contact.html
+      - generic "Language" [ref=e11]:
+        - button "EN" [ref=e12] [cursor=pointer]
+        - button "NO" [ref=e13] [cursor=pointer]
+  - banner [ref=e14]:
+    - generic [ref=e15]: Valuable Feedback, Fast
+    - heading "Let's talk" [level=1] [ref=e16]
+    - paragraph [ref=e17]: Got questions about the assessment, interested in the training, or just want to argue about the Test Automation Quadrant? All of the above is fine.
+  - main [ref=e18]:
+    - generic [ref=e19]:
+      - paragraph [ref=e20]: Bas Dijkstra has spent a good chunk of his career helping teams figure out why their test automation isn't working — and what to do about it. The answer is almost never "buy a different tool." If you're looking for someone who'll give you straight answers rather than a sales pitch, you've found the right person.
+      - paragraph [ref=e21]: Whether you've got a specific question about the assessment, want to explore what the training might look like for your team, or just want to have a conversation about where your practice is headed — reach out. He doesn't bite, and he's genuinely interested in the problem.
+    - generic [ref=e22]:
+      - generic [ref=e25]:
+        - generic [ref=e26]:
+          - heading "Get in touch directly" [level=2] [ref=e27]
+          - paragraph [ref=e28]: Head over to ontestautomation.com to send a message. Best for questions about training, speaking engagements, or consulting — or if you want to tell Bas what you got wrong on the assessment and why you disagree.
+        - link "Contact page" [ref=e29] [cursor=pointer]:
+          - /url: https://www.ontestautomation.com/contact
+          - generic [ref=e30]: Contact page
+          - img [ref=e31]
+      - generic [ref=e35]:
+        - generic [ref=e36]:
+          - heading "Connect on LinkedIn" [level=2] [ref=e37]
+          - paragraph [ref=e38]: Bas is active on LinkedIn and posts regularly about test automation, testing strategy, and the occasional strong opinion about things the industry keeps getting wrong. A good place to follow along or start a conversation.
+        - link "LinkedIn profile" [ref=e39] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/basdijkstra
+          - generic [ref=e40]: LinkedIn profile
+          - img [ref=e41]
+  - contentinfo [ref=e43]:
+    - paragraph [ref=e44]:
+      - text: Based on the
+      - strong [ref=e45]: Valuable Feedback, Fast
+      - text: framework by
+      - link "Bas Dijkstra" [ref=e46] [cursor=pointer]:
+        - /url: https://www.ontestautomation.com
+  - generic [ref=e47]:
+    - img "Impeccable live mode - agent not polling" [ref=e48]:
+      - img [ref=e50]
+    - generic [ref=e53]:
+      - button "Pick element" [ref=e54] [cursor=pointer]:
+        - img [ref=e55]
+        - generic: Pick
+      - button "Insert new element" [ref=e57] [cursor=pointer]:
+        - img [ref=e58]
+        - generic: Insert
+      - button "Detect anti-patterns" [ref=e59] [cursor=pointer]:
+        - img [ref=e60]
+        - generic: Detect
+      - button "Toggle DESIGN.md panel" [ref=e63] [cursor=pointer]:
+        - generic: DESIGN.md
+      - generic "Steer the page" [ref=e69] [cursor=pointer]:
+        - generic:
+          - img
+        - textbox "Steer the page" [active] [ref=e70]:
+          - /placeholder: Steer…
+        - button "Voice input" [ref=e71]:
+          - img [ref=e72]
+      - button "Exit live mode" [ref=e76] [cursor=pointer]:
+        - img [ref=e77]
+  - generic:
+    - generic:
+      - complementary:
+        - generic:
+          - generic: DESIGN.md
+          - generic:
+            - button "Visual"
+            - button "Raw"
+          - button "Close panel": ✕
+        - generic:
+          - generic: No design system data available.

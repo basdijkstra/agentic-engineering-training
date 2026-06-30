@@ -1,0 +1,428 @@
+- generic [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "Valuable Feedback, Fast" [ref=e4] [cursor=pointer]:
+        - /url: valuable-feedback-fast-assessment.html
+      - generic [ref=e5]:
+        - link "Assessment" [ref=e6] [cursor=pointer]:
+          - /url: valuable-feedback-fast-assessment.html
+        - link "Resources" [ref=e7] [cursor=pointer]:
+          - /url: resources.html
+        - link "Testimonials" [ref=e8] [cursor=pointer]:
+          - /url: testimonials.html
+        - link "About" [ref=e9] [cursor=pointer]:
+          - /url: about.html
+        - link "Contact" [ref=e10] [cursor=pointer]:
+          - /url: contact.html
+  - banner [ref=e11]:
+    - generic [ref=e12]: Test Automation Maturity Assessment
+    - heading "Valuable Feedback, Fast" [level=1] [ref=e13]
+    - paragraph [ref=e14]: "Find out how well your test automation practice delivers on its only real job: getting the right information to the right people, fast. No fluff — just an honest look at where you are."
+    - paragraph [ref=e15]:
+      - text: Based on the work of
+      - link "Bas Dijkstra" [ref=e16] [cursor=pointer]:
+        - /url: https://www.ontestautomation.com
+  - generic [ref=e18]:
+    - generic [ref=e19]: 0 of 36 answered
+    - generic [ref=e21]: 0 / 144
+  - main [ref=e22]:
+    - generic [ref=e23]:
+      - heading "Before you dive in..." [level=2] [ref=e24]
+      - paragraph [ref=e25]: For each statement, rate how accurately it describes your team's current reality — not what you'd like to believe, and not what you're planning to fix next sprint. Be honest. The assessment works best when you do it together as a team; you'll be surprised how much you disagree on things you thought were settled. There are 36 statements across 8 dimensions.
+      - generic [ref=e26]:
+        - generic [ref=e27]:
+          - generic [ref=e28]: "1"
+          - generic [ref=e29]: Not yet — we're nowhere near this
+        - generic [ref=e30]:
+          - generic [ref=e31]: "2"
+          - generic [ref=e32]: Sometimes — we do this, but inconsistently
+        - generic [ref=e33]:
+          - generic [ref=e34]: "3"
+          - generic [ref=e35]: Often — this is mostly true for us
+        - generic [ref=e36]:
+          - generic [ref=e37]: "4"
+          - generic [ref=e38]: Consistently — yes, this is genuinely us
+    - generic [ref=e39]:
+      - generic [ref=e40]:
+        - generic [ref=e41]: "1"
+        - generic [ref=e42]:
+          - heading "Strategy & Purpose" [level=3] [ref=e43]
+          - paragraph [ref=e44]: Most teams reach for a tool before they've asked what they actually need. That's backwards. The real problems in test automation are rarely technical — they're strategic. This section checks whether your team knows why you automate, not just how.
+      - generic [ref=e45]:
+        - generic [ref=e46]:
+          - generic [ref=e47]: We have a clear test automation strategy that guides what we automate, why, and how — and it is understood across the whole team.
+          - generic [ref=e48]:
+            - button "1" [ref=e49] [cursor=pointer]
+            - button "2" [ref=e50] [cursor=pointer]
+            - button "3" [ref=e51] [cursor=pointer]
+            - button "4" [ref=e52] [cursor=pointer]
+        - generic [ref=e53]:
+          - generic [ref=e54]: Our automation goals are expressed in terms of the information value we need, not primarily in terms of tools, frameworks, or coverage metrics.
+          - generic [ref=e55]:
+            - button "1" [ref=e56] [cursor=pointer]
+            - button "2" [ref=e57] [cursor=pointer]
+            - button "3" [ref=e58] [cursor=pointer]
+            - button "4" [ref=e59] [cursor=pointer]
+        - generic [ref=e60]:
+          - generic [ref=e61]: We regularly revisit and update our strategy as our product, team, and context change over time.
+          - generic [ref=e62]:
+            - button "1" [ref=e63] [cursor=pointer]
+            - button "2" [ref=e64] [cursor=pointer]
+            - button "3" [ref=e65] [cursor=pointer]
+            - button "4" [ref=e66] [cursor=pointer]
+        - generic [ref=e67]:
+          - generic [ref=e68]: We conduct explicit, risk-based discussions to decide what to automate — and equally importantly, what not to automate.
+          - generic [ref=e69]:
+            - button "1" [ref=e70] [cursor=pointer]
+            - button "2" [ref=e71] [cursor=pointer]
+            - button "3" [ref=e72] [cursor=pointer]
+            - button "4" [ref=e73] [cursor=pointer]
+        - generic [ref=e74]:
+          - generic [ref=e75]: Our team understands the distinction between automated testing and using automation tools to support the testing process — and why that distinction matters.
+          - generic [ref=e76]:
+            - button "1" [ref=e77] [cursor=pointer]
+            - button "2" [ref=e78] [cursor=pointer]
+            - button "3" [ref=e79] [cursor=pointer]
+            - button "4" [ref=e80] [cursor=pointer]
+      - generic [ref=e81]:
+        - generic [ref=e82]: Section score
+        - generic [ref=e84]: —
+    - generic [ref=e85]:
+      - generic [ref=e86]:
+        - generic [ref=e87]: "2"
+        - generic [ref=e88]:
+          - heading "Coverage — Testing What Matters" [level=3] [ref=e89]
+          - paragraph [ref=e90]: There's a temptation to automate whatever is easy to automate, then feel good about the coverage numbers. Resist it. Tests that confirm behaviors nobody cares about are expensive noise. This section checks whether your coverage is driven by risk and value — or by convenience.
+      - generic [ref=e91]:
+        - generic [ref=e92]:
+          - generic [ref=e93]: Our automated tests focus on behaviors that matter most to the business and end users — not just what is technically convenient to automate.
+          - generic [ref=e94]:
+            - button "1" [ref=e95] [cursor=pointer]
+            - button "2" [ref=e96] [cursor=pointer]
+            - button "3" [ref=e97] [cursor=pointer]
+            - button "4" [ref=e98] [cursor=pointer]
+        - generic [ref=e99]:
+          - generic [ref=e100]: We prioritize coverage based on risk, not based on what will look best in a coverage report or what is easiest to write.
+          - generic [ref=e101]:
+            - button "1" [ref=e102] [cursor=pointer]
+            - button "2" [ref=e103] [cursor=pointer]
+            - button "3" [ref=e104] [cursor=pointer]
+            - button "4" [ref=e105] [cursor=pointer]
+        - generic [ref=e106]:
+          - generic [ref=e107]: We regularly review and update our test coverage as the product and its risk profile evolve.
+          - generic [ref=e108]:
+            - button "1" [ref=e109] [cursor=pointer]
+            - button "2" [ref=e110] [cursor=pointer]
+            - button "3" [ref=e111] [cursor=pointer]
+            - button "4" [ref=e112] [cursor=pointer]
+        - generic [ref=e113]:
+          - generic [ref=e114]: We make conscious, explicit decisions about what not to automate, and those decisions are understood and accepted across the team.
+          - generic [ref=e115]:
+            - button "1" [ref=e116] [cursor=pointer]
+            - button "2" [ref=e117] [cursor=pointer]
+            - button "3" [ref=e118] [cursor=pointer]
+            - button "4" [ref=e119] [cursor=pointer]
+        - generic [ref=e120]:
+          - generic [ref=e121]: Key stakeholders — product owners, business analysts, end users — recognize and value the information our automated tests provide.
+          - generic [ref=e122]:
+            - button "1" [ref=e123] [cursor=pointer]
+            - button "2" [ref=e124] [cursor=pointer]
+            - button "3" [ref=e125] [cursor=pointer]
+            - button "4" [ref=e126] [cursor=pointer]
+      - generic [ref=e127]:
+        - generic [ref=e128]: Section score
+        - generic [ref=e130]: —
+    - generic [ref=e131]:
+      - generic [ref=e132]:
+        - generic [ref=e133]: "3"
+        - generic [ref=e134]:
+          - heading "Trustworthiness" [level=3] [ref=e135]
+          - paragraph [ref=e136]: "Here's the uncomfortable truth about flaky or misleading tests: they're worse than no tests at all. A suite you don't trust is one you start ignoring — and then you're flying blind with extra steps. This section checks whether your team genuinely relies on what your tests tell you."
+      - generic [ref=e137]:
+        - generic [ref=e138]:
+          - generic [ref=e139]: Our automated tests rarely fail due to reasons unrelated to actual product defects — such as test data issues, environment instability, or bugs in the test code itself.
+          - generic [ref=e140]:
+            - button "1" [ref=e141] [cursor=pointer]
+            - button "2" [ref=e142] [cursor=pointer]
+            - button "3" [ref=e143] [cursor=pointer]
+            - button "4" [ref=e144] [cursor=pointer]
+        - generic [ref=e145]:
+          - generic [ref=e146]: When all tests pass, we are confident the tested behaviors are actually working — we do not worry that tests are passing despite real bugs being present.
+          - generic [ref=e147]:
+            - button "1" [ref=e148] [cursor=pointer]
+            - button "2" [ref=e149] [cursor=pointer]
+            - button "3" [ref=e150] [cursor=pointer]
+            - button "4" [ref=e151] [cursor=pointer]
+        - generic [ref=e152]:
+          - generic [ref=e153]: Flaky tests — those that pass and fail intermittently without code changes — are treated as a serious problem and are fixed or removed promptly.
+          - generic [ref=e154]:
+            - button "1" [ref=e155] [cursor=pointer]
+            - button "2" [ref=e156] [cursor=pointer]
+            - button "3" [ref=e157] [cursor=pointer]
+            - button "4" [ref=e158] [cursor=pointer]
+        - generic [ref=e159]:
+          - generic [ref=e160]: Test data, environments, and infrastructure are stable and consistent enough that environment problems do not cause test failures.
+          - generic [ref=e161]:
+            - button "1" [ref=e162] [cursor=pointer]
+            - button "2" [ref=e163] [cursor=pointer]
+            - button "3" [ref=e164] [cursor=pointer]
+            - button "4" [ref=e165] [cursor=pointer]
+        - generic [ref=e166]:
+          - generic [ref=e167]: We trust our test results enough to base important decisions — release readiness, rollback, escalation — on them.
+          - generic [ref=e168]:
+            - button "1" [ref=e169] [cursor=pointer]
+            - button "2" [ref=e170] [cursor=pointer]
+            - button "3" [ref=e171] [cursor=pointer]
+            - button "4" [ref=e172] [cursor=pointer]
+      - generic [ref=e173]:
+        - generic [ref=e174]: Section score
+        - generic [ref=e176]: —
+    - generic [ref=e177]:
+      - generic [ref=e178]:
+        - generic [ref=e179]: "4"
+        - generic [ref=e180]:
+          - heading "Actionability" [level=3] [ref=e181]
+          - paragraph [ref=e182]: A test failure that tells you "something went wrong somewhere" is not feedback — it's a riddle. Good tests don't just detect problems; they point you straight at them. This section checks whether your failures are useful, or just the beginning of an investigation.
+      - generic [ref=e183]:
+        - generic [ref=e184]:
+          - generic [ref=e185]: When a test fails, we can identify the root cause quickly without extensive investigation across many components or services.
+          - generic [ref=e186]:
+            - button "1" [ref=e187] [cursor=pointer]
+            - button "2" [ref=e188] [cursor=pointer]
+            - button "3" [ref=e189] [cursor=pointer]
+            - button "4" [ref=e190] [cursor=pointer]
+        - generic [ref=e191]:
+          - generic [ref=e192]: Test names clearly and specifically describe the behavior under test and the expected outcome, so anyone reading the results understands what was verified.
+          - generic [ref=e193]:
+            - button "1" [ref=e194] [cursor=pointer]
+            - button "2" [ref=e195] [cursor=pointer]
+            - button "3" [ref=e196] [cursor=pointer]
+            - button "4" [ref=e197] [cursor=pointer]
+        - generic [ref=e198]:
+          - generic [ref=e199]: Assertion messages are specific and informative, providing clear context about what was expected versus what actually happened.
+          - generic [ref=e200]:
+            - button "1" [ref=e201] [cursor=pointer]
+            - button "2" [ref=e202] [cursor=pointer]
+            - button "3" [ref=e203] [cursor=pointer]
+            - button "4" [ref=e204] [cursor=pointer]
+        - generic [ref=e205]:
+          - generic [ref=e206]: Individual tests are narrow enough in scope that a failure reliably points to a specific, well-bounded area of the product or codebase.
+          - generic [ref=e207]:
+            - button "1" [ref=e208] [cursor=pointer]
+            - button "2" [ref=e209] [cursor=pointer]
+            - button "3" [ref=e210] [cursor=pointer]
+            - button "4" [ref=e211] [cursor=pointer]
+      - generic [ref=e212]:
+        - generic [ref=e213]: Section score
+        - generic [ref=e215]: —
+    - generic [ref=e216]:
+      - generic [ref=e217]:
+        - generic [ref=e218]: "5"
+        - generic [ref=e219]:
+          - heading "Efficiency & Test Design" [level=3] [ref=e220]
+          - paragraph [ref=e221]: Valuable feedback that arrives three hours after you pushed your change is only marginally better than no feedback at all. Test design choices — which level to test at, whether to decompose that sprawling E2E suite, how to handle external dependencies — determine whether "fast" in Valuable Feedback, Fast actually means anything.
+      - generic [ref=e222]:
+        - generic [ref=e223]:
+          - generic [ref=e224]: We actively measure and work to reduce test suite execution time, treating slow feedback as a problem worth solving.
+          - generic [ref=e225]:
+            - button "1" [ref=e226] [cursor=pointer]
+            - button "2" [ref=e227] [cursor=pointer]
+            - button "3" [ref=e228] [cursor=pointer]
+            - button "4" [ref=e229] [cursor=pointer]
+        - generic [ref=e230]:
+          - generic [ref=e231]: We use the most appropriate test type — unit, API/integration, E2E — for each scenario, choosing based on what needs to be verified rather than habit or convenience.
+          - generic [ref=e232]:
+            - button "1" [ref=e233] [cursor=pointer]
+            - button "2" [ref=e234] [cursor=pointer]
+            - button "3" [ref=e235] [cursor=pointer]
+            - button "4" [ref=e236] [cursor=pointer]
+        - generic [ref=e237]:
+          - generic [ref=e238]: We avoid duplicating the same scenarios across multiple test levels — behaviors well-covered by unit tests are not redundantly re-tested as E2E tests.
+          - generic [ref=e239]:
+            - button "1" [ref=e240] [cursor=pointer]
+            - button "2" [ref=e241] [cursor=pointer]
+            - button "3" [ref=e242] [cursor=pointer]
+            - button "4" [ref=e243] [cursor=pointer]
+        - generic [ref=e244]:
+          - generic [ref=e245]: We have decomposed slow or brittle E2E tests into faster, more targeted alternatives — API tests, component tests, or contract tests — where it was appropriate to do so.
+          - generic [ref=e246]:
+            - button "1" [ref=e247] [cursor=pointer]
+            - button "2" [ref=e248] [cursor=pointer]
+            - button "3" [ref=e249] [cursor=pointer]
+            - button "4" [ref=e250] [cursor=pointer]
+        - generic [ref=e251]:
+          - generic [ref=e252]: External dependencies — third-party services, databases, message brokers — are managed thoughtfully using mocks, stubs, or contract tests where appropriate.
+          - generic [ref=e253]:
+            - button "1" [ref=e254] [cursor=pointer]
+            - button "2" [ref=e255] [cursor=pointer]
+            - button "3" [ref=e256] [cursor=pointer]
+            - button "4" [ref=e257] [cursor=pointer]
+      - generic [ref=e258]:
+        - generic [ref=e259]: Section score
+        - generic [ref=e261]: —
+    - generic [ref=e262]:
+      - generic [ref=e263]:
+        - generic [ref=e264]: "6"
+        - generic [ref=e265]:
+          - heading "The Test Automation Quadrant" [level=3] [ref=e266]
+          - paragraph [ref=e267]: Not all tests deserve to exist. The Test Automation Quadrant puts every test on two axes — information value and efficiency — and makes the hard choices obvious. The goal isn't more tests; it's better-positioned ones. This section checks whether your team thinks that way, or whether your suite grows like a garden nobody weeds.
+      - generic [ref=e268]:
+        - generic [ref=e269]:
+          - generic [ref=e270]: We regularly assess whether each part of our test suite delivers high information value relative to the cost and effort of maintaining and running it.
+          - generic [ref=e271]:
+            - button "1" [ref=e272] [cursor=pointer]
+            - button "2" [ref=e273] [cursor=pointer]
+            - button "3" [ref=e274] [cursor=pointer]
+            - button "4" [ref=e275] [cursor=pointer]
+        - generic [ref=e276]:
+          - generic [ref=e277]: Low-value tests — those confirming behaviors no one cares about, or that duplicate coverage already provided elsewhere — are actively removed rather than accumulated indefinitely.
+          - generic [ref=e278]:
+            - button "1" [ref=e279] [cursor=pointer]
+            - button "2" [ref=e280] [cursor=pointer]
+            - button "3" [ref=e281] [cursor=pointer]
+            - button "4" [ref=e282] [cursor=pointer]
+        - generic [ref=e283]:
+          - generic [ref=e284]: We apply shift-left practices — bringing testing earlier into the development lifecycle — to catch issues when they are cheapest to fix.
+          - generic [ref=e285]:
+            - button "1" [ref=e286] [cursor=pointer]
+            - button "2" [ref=e287] [cursor=pointer]
+            - button "3" [ref=e288] [cursor=pointer]
+            - button "4" [ref=e289] [cursor=pointer]
+        - generic [ref=e290]:
+          - generic [ref=e291]: We continuously look for ways to preserve or increase information value while reducing test execution time and ongoing maintenance burden.
+          - generic [ref=e292]:
+            - button "1" [ref=e293] [cursor=pointer]
+            - button "2" [ref=e294] [cursor=pointer]
+            - button "3" [ref=e295] [cursor=pointer]
+            - button "4" [ref=e296] [cursor=pointer]
+      - generic [ref=e297]:
+        - generic [ref=e298]: Section score
+        - generic [ref=e300]: —
+    - generic [ref=e301]:
+      - generic [ref=e302]:
+        - generic [ref=e303]: "7"
+        - generic [ref=e304]:
+          - heading "Pipeline & Tooling" [level=3] [ref=e305]
+          - paragraph [ref=e306]: Picking the tool first and figuring out the strategy later is like buying a car before you know where you're going. It usually gets you somewhere — just not necessarily anywhere useful. This section checks whether your tooling and pipeline serve your strategy, or whether they've quietly become the strategy.
+      - generic [ref=e307]:
+        - generic [ref=e308]:
+          - generic [ref=e309]: Automated tests run automatically in our CI/CD pipeline on every relevant code change, providing feedback before code is merged or deployed.
+          - generic [ref=e310]:
+            - button "1" [ref=e311] [cursor=pointer]
+            - button "2" [ref=e312] [cursor=pointer]
+            - button "3" [ref=e313] [cursor=pointer]
+            - button "4" [ref=e314] [cursor=pointer]
+        - generic [ref=e315]:
+          - generic [ref=e316]: Tool and framework selection is driven by our strategy, context, and team needs — not by industry trends, vendor marketing, or the path of least resistance.
+          - generic [ref=e317]:
+            - button "1" [ref=e318] [cursor=pointer]
+            - button "2" [ref=e319] [cursor=pointer]
+            - button "3" [ref=e320] [cursor=pointer]
+            - button "4" [ref=e321] [cursor=pointer]
+        - generic [ref=e322]:
+          - generic [ref=e323]: Our pipeline is designed to deliver fast feedback — for example through parallel execution, staged test runs, or test selection strategies.
+          - generic [ref=e324]:
+            - button "1" [ref=e325] [cursor=pointer]
+            - button "2" [ref=e326] [cursor=pointer]
+            - button "3" [ref=e327] [cursor=pointer]
+            - button "4" [ref=e328] [cursor=pointer]
+        - generic [ref=e329]:
+          - generic [ref=e330]: We regularly evaluate whether our current tools and infrastructure still serve our needs as the product, team, and context evolve.
+          - generic [ref=e331]:
+            - button "1" [ref=e332] [cursor=pointer]
+            - button "2" [ref=e333] [cursor=pointer]
+            - button "3" [ref=e334] [cursor=pointer]
+            - button "4" [ref=e335] [cursor=pointer]
+      - generic [ref=e336]:
+        - generic [ref=e337]: Section score
+        - generic [ref=e339]: —
+    - generic [ref=e340]:
+      - generic [ref=e341]:
+        - generic [ref=e342]: "8"
+        - generic [ref=e343]:
+          - heading "Team & Skills" [level=3] [ref=e344]
+          - paragraph [ref=e345]: If your test automation lives in one person's head — or one person's pull requests — you don't have a practice, you have a dependency. The moment that person goes on holiday, everything gets awkward. This section checks whether automation is genuinely shared across the team, or quietly owned by one very tired individual.
+      - generic [ref=e346]:
+        - generic [ref=e347]:
+          - generic [ref=e348]: Our team collectively has the skills and knowledge needed to write, maintain, improve, and evolve our automated tests without depending on a single specialist.
+          - generic [ref=e349]:
+            - button "1" [ref=e350] [cursor=pointer]
+            - button "2" [ref=e351] [cursor=pointer]
+            - button "3" [ref=e352] [cursor=pointer]
+            - button "4" [ref=e353] [cursor=pointer]
+        - generic [ref=e354]:
+          - generic [ref=e355]: Test automation is a shared team responsibility — not delegated to a single person, dedicated tester, or a separate QA function operating in isolation.
+          - generic [ref=e356]:
+            - button "1" [ref=e357] [cursor=pointer]
+            - button "2" [ref=e358] [cursor=pointer]
+            - button "3" [ref=e359] [cursor=pointer]
+            - button "4" [ref=e360] [cursor=pointer]
+        - generic [ref=e361]:
+          - generic [ref=e362]: We have identified skills gaps in test automation design and implementation, and we have a concrete plan to address them.
+          - generic [ref=e363]:
+            - button "1" [ref=e364] [cursor=pointer]
+            - button "2" [ref=e365] [cursor=pointer]
+            - button "3" [ref=e366] [cursor=pointer]
+            - button "4" [ref=e367] [cursor=pointer]
+        - generic [ref=e368]:
+          - generic [ref=e369]: Team members can independently diagnose and fix test failures — distinguishing whether a failure originates in the product, the test code, or the infrastructure.
+          - generic [ref=e370]:
+            - button "1" [ref=e371] [cursor=pointer]
+            - button "2" [ref=e372] [cursor=pointer]
+            - button "3" [ref=e373] [cursor=pointer]
+            - button "4" [ref=e374] [cursor=pointer]
+      - generic [ref=e375]:
+        - generic [ref=e376]: Section score
+        - generic [ref=e378]: —
+    - button "View My Results" [disabled] [ref=e379]
+  - contentinfo [ref=e380]:
+    - paragraph [ref=e381]:
+      - text: Based on the
+      - strong [ref=e382]: Valuable Feedback, Fast
+      - text: framework by
+      - link "Bas Dijkstra" [ref=e383] [cursor=pointer]:
+        - /url: https://www.ontestautomation.com
+    - paragraph [ref=e384]:
+      - link "The Test Automation Quadrant" [ref=e385] [cursor=pointer]:
+        - /url: https://www.ontestautomation.com/the-test-automation-quadrant/
+      - text: ·
+      - link "The Valuable in Valuable Feedback, Fast" [ref=e386] [cursor=pointer]:
+        - /url: https://www.ontestautomation.com/the-valuable-in-valuable-feedback-fast/
+      - text: ·
+      - link "Valuable Feedback, Fast Training" [ref=e387] [cursor=pointer]:
+        - /url: https://www.ontestautomation.com/training/valuable-feedback-fast/
+  - generic [ref=e388]:
+    - img "Impeccable live mode - agent not polling" [ref=e389]:
+      - img [ref=e391]
+    - generic [ref=e394]:
+      - button "Pick element" [ref=e395] [cursor=pointer]:
+        - img [ref=e396]
+        - generic: Pick
+      - button "Insert new element" [ref=e398] [cursor=pointer]:
+        - img [ref=e399]
+        - generic: Insert
+      - button "Detect anti-patterns" [ref=e400] [cursor=pointer]:
+        - img [ref=e401]
+        - generic: Detect
+      - button "Toggle DESIGN.md panel" [ref=e404] [cursor=pointer]:
+        - generic: DESIGN.md
+      - generic "Steer the page" [ref=e410] [cursor=pointer]:
+        - generic:
+          - img
+        - textbox "Steer the page" [active] [ref=e411]:
+          - /placeholder: Steer…
+        - button "Voice input" [ref=e412]:
+          - img [ref=e413]
+      - button "Exit live mode" [ref=e417] [cursor=pointer]:
+        - img [ref=e418]
+  - generic:
+    - generic:
+      - complementary:
+        - generic:
+          - generic: DESIGN.md
+          - generic:
+            - button "Visual"
+            - button "Raw"
+          - button "Close panel": ✕
+        - generic:
+          - generic: No design system data available.

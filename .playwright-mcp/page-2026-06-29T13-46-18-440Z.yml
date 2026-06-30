@@ -1,0 +1,86 @@
+- generic [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "Valuable Feedback, Fast" [ref=e4] [cursor=pointer]:
+        - /url: valuable-feedback-fast-assessment.html
+      - generic [ref=e5]:
+        - link "Assessment" [ref=e6] [cursor=pointer]:
+          - /url: valuable-feedback-fast-assessment.html
+        - link "Resources" [ref=e7] [cursor=pointer]:
+          - /url: resources.html
+        - link "Testimonials" [ref=e8] [cursor=pointer]:
+          - /url: testimonials.html
+        - link "About" [ref=e9] [cursor=pointer]:
+          - /url: about.html
+        - link "Contact" [ref=e10] [cursor=pointer]:
+          - /url: contact.html
+      - generic "Language" [ref=e11]:
+        - button "EN" [ref=e12] [cursor=pointer]
+        - button "NO" [ref=e13] [cursor=pointer]
+  - banner [ref=e14]:
+    - generic [ref=e15]: Valuable Feedback, Fast
+    - heading "La oss ta en prat" [level=1] [ref=e80]
+    - paragraph [ref=e17]: Har du spørsmål om vurderingen, er du interessert i opplæringen, eller vil du bare diskutere Test Automation Quadrant? Alt det ovennevnte er helt greit.
+  - main [ref=e18]:
+    - generic [ref=e19]:
+      - paragraph [ref=e20]: Bas Dijkstra har brukt store deler av karrieren sin på å hjelpe programvareteam med å finne ut hvorfor testautomatiseringen ikke leverer den verdien de ble lovet – og hva de faktisk kan gjøres med det. Svaret er nesten aldri «kjøp et annet verktøy». Leter du etter noen som gir deg ærlige svar heller enn et salgspitch, har du funnet riktig person.
+      - paragraph [ref=e21]: Enten du har et spesifikt spørsmål om vurderingen, ønsker å utforske hva opplæringen kan se ut for teamet ditt, eller bare vil ha en samtale om hvilken retning praksisen din bør ta – ta kontakt. Han biter ikke, og er genuint interessert i problemet.
+    - generic [ref=e22]:
+      - generic [ref=e25]:
+        - generic [ref=e26]:
+          - heading "Ta kontakt direkte" [level=2] [ref=e81]
+          - paragraph [ref=e28]: Gå til ontestautomation.com for å sende en melding. Best for spørsmål om opplæring, foredrag eller rådgivning – eller hvis du vil fortelle Bas hva du svarte feil på og hvorfor du er uenig.
+        - link "Kontaktside" [ref=e82] [cursor=pointer]:
+          - /url: https://www.ontestautomation.com/contact
+          - generic [ref=e30]: Kontaktside
+          - img [ref=e31]
+      - generic [ref=e35]:
+        - generic [ref=e36]:
+          - heading "Koble til på LinkedIn" [level=2] [ref=e83]
+          - paragraph [ref=e38]: Bas er aktiv på LinkedIn og publiserer jevnlig om testautomatisering, teststrategi og den av og til sterke meningen om ting bransjen fortsetter å gjøre feil. Et godt sted å følge med eller starte en samtale.
+        - link "LinkedIn-profil" [ref=e84] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/basdijkstra
+          - generic [ref=e40]: LinkedIn-profil
+          - img [ref=e41]
+  - contentinfo [ref=e43]:
+    - paragraph [ref=e44]:
+      - text: Based on the
+      - strong [ref=e45]: Valuable Feedback, Fast
+      - text: framework by
+      - link "Bas Dijkstra" [ref=e46] [cursor=pointer]:
+        - /url: https://www.ontestautomation.com
+  - generic [ref=e47]:
+    - img "Impeccable live mode - agent not polling" [ref=e48]:
+      - img [ref=e85]
+    - generic [ref=e53]:
+      - button "Pick element" [ref=e54] [cursor=pointer]:
+        - img [ref=e55]
+        - generic: Pick
+      - button "Insert new element" [ref=e57] [cursor=pointer]:
+        - img [ref=e58]
+        - generic: Insert
+      - button "Detect anti-patterns" [ref=e59] [cursor=pointer]:
+        - img [ref=e60]
+        - generic: Detect
+      - button "Toggle DESIGN.md panel" [ref=e63] [cursor=pointer]:
+        - generic: DESIGN.md
+      - generic "Steer the page" [ref=e69] [cursor=pointer]:
+        - generic:
+          - img
+        - textbox "Steer the page" [active] [ref=e70]:
+          - /placeholder: Steer…
+        - button "Voice input" [ref=e71]:
+          - img [ref=e72]
+      - button "Exit live mode" [ref=e76] [cursor=pointer]:
+        - img [ref=e77]
+  - generic:
+    - generic:
+      - complementary:
+        - generic:
+          - generic: DESIGN.md
+          - generic:
+            - button "Visual"
+            - button "Raw"
+          - button "Close panel": ✕
+        - generic:
+          - generic: No design system data available.

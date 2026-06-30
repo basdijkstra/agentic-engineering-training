@@ -1,0 +1,42 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "Valuable Feedback, Fast" [ref=e4] [cursor=pointer]:
+        - /url: valuable-feedback-fast-assessment.html
+      - generic [ref=e5]:
+        - link "Assessment" [ref=e6] [cursor=pointer]:
+          - /url: valuable-feedback-fast-assessment.html
+        - link "Resources" [ref=e7] [cursor=pointer]:
+          - /url: resources.html
+        - link "Testimonials" [ref=e8] [cursor=pointer]:
+          - /url: testimonials.html
+        - link "About" [ref=e9] [cursor=pointer]:
+          - /url: about.html
+        - link "Contact" [ref=e10] [cursor=pointer]:
+          - /url: contact.html
+  - banner [ref=e11]:
+    - generic [ref=e12]: Valuable Feedback, Fast
+    - heading "The person behind the framework" [level=1] [ref=e13]
+    - paragraph [ref=e14]: Test automation consultant, trainer, and someone who has spent a career telling teams things they didn't want to hear — but needed to.
+  - main [ref=e15]:
+    - generic [ref=e16]:
+      - paragraph [ref=e17]: Bas Dijkstra is an independent test automation consultant and trainer based in the Netherlands. For the better part of two decades, he's been helping software teams figure out why their test automation isn't delivering the value they were promised — and what to actually do about it.
+      - paragraph [ref=e18]: "The answer is almost never \"switch to a different tool.\" It's usually something more uncomfortable: the wrong tests at the wrong level, a suite nobody trusts, feedback that arrives too late to be useful. Bas's job is to say that out loud, and then help teams do something about it."
+      - paragraph [ref=e19]: He's worked across industries and team sizes, from small startups moving fast to large enterprises moving carefully. What they tend to have in common is that their test automation is trying to do too much, and doing none of it particularly well. He finds that strangely satisfying to fix.
+      - paragraph [ref=e20]:
+        - text: When he's not consulting or training, he writes about test automation at
+        - link "ontestautomation.com" [ref=e21] [cursor=pointer]:
+          - /url: https://www.ontestautomation.com
+        - text: — which has been running long enough that some of the early posts are now historical artefacts. He speaks at conferences, runs workshops, and occasionally argues on the internet about testing strategy. That last one is free.
+    - generic [ref=e22]:
+      - heading "About the Valuable Feedback, Fast framework" [level=2] [ref=e23]
+      - paragraph [ref=e24]: "The framework came out of a recurring observation: teams were investing heavily in test automation but struggling to articulate what they were getting back from it. The suites were large. The runs were slow. The failures were often flaky. The feedback, when it arrived, was hard to act on."
+      - paragraph [ref=e25]: "Valuable Feedback, Fast is an attempt to name what good actually looks like. Not in terms of tools or techniques, but in terms of outcomes: does your automation tell you something useful, quickly enough to matter, reliably enough to trust? Eight dimensions, thirty-six questions, one honest answer about where you stand."
+      - paragraph [ref=e26]: The assessment won't tell you which framework to use. It will tell you where your practice is strong, where it's not, and what to focus on next. That's the point.
+  - contentinfo [ref=e27]:
+    - paragraph [ref=e28]:
+      - text: Based on the
+      - strong [ref=e29]: Valuable Feedback, Fast
+      - text: framework by
+      - link "Bas Dijkstra" [ref=e30] [cursor=pointer]:
+        - /url: https://www.ontestautomation.com
