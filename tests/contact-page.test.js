@@ -32,6 +32,19 @@ test('contact.html contains ontestautomation.com/contact link', () => {
   assert.match(html, /ontestautomation\.com\/contact/);
 });
 
+test('contact.html footer link has rel="noopener"', () => {
+  const html = read('contact.html');
+  assert.match(html, /ontestautomation\.com" target="_blank" rel="noopener"/);
+});
+
+test('contact.html decorative SVGs have aria-hidden="true"', () => {
+  const html = read('contact.html');
+  const svgMatches = [...html.matchAll(/<svg[^>]*>/g)];
+  for (const match of svgMatches) {
+    assert.match(match[0], /aria-hidden="true"/, `SVG missing aria-hidden: ${match[0]}`);
+  }
+});
+
 test('every existing page nav includes a link to contact.html', () => {
   const pages = [
     'valuable-feedback-fast-assessment.html',
